@@ -76,67 +76,14 @@
     width: 100%;
   }
   
-  .buttonWallet {
-    display: flex;
-    /* gap: 8px; */
-    background: #25db1b35;
+  .icon {
+    height: 16px;
+    width: 16px;
     color: #f8f8fa;
-    border: none;
-    text-align: center;
-    /* margin: 0; */
-    border-radius: 60px;
-    transition: 0.3s;
-    padding: 8px 16px 8px 16px;
-    font-size: 16px;
-    /* display: inline-flex; */
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    /* align-items: center; */
-    /* vertical-align: bottom; */
-    /* text-align: center; */
-    /* overflow: hidden; */
-    /* position: relative; */
-    justify-content: center;
+    
   }
-  
-  .buttonWallet:hover {
-    background: #25db1b63;
-  }
-  .buttonConnect {
-    display: inline;
-    background: none;
-    color: #f8f8fa;
-    border-color: #f8f8fa;
-    margin: 0;
-    border-radius: 60px;
-    transition: 0.3s;
-    padding: 8px 16px 8px 16px;
-    width: 100%;
-    font-size: 16px;
-    display: -moz-inline-box;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -moz-box-align: center;
-    align-items: center;
-    vertical-align: bottom;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .buttonConnect:hover {
-    background: #f8f8fa;
-    color: #090c12;
-    border-color: #f8f8fa;
-  }
-  
-  .buttonLaunch {
+
+  .buttonDisabled {
     display: inline;
     background: none;
     color: #f8f8fa;
@@ -160,6 +107,37 @@
     text-align: center;
     overflow: hidden;
     position: relative;
+  }
+
+  .buttonEnabled {
+    display: inline;
+    background: none;
+    color: #f8f8fa;
+    border-color: #f8f8fa;
+    margin: 0;
+    border-radius: 60px;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    width: 100%;
+    font-size: 16px;
+    display: -moz-inline-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-box-align: center;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .buttonEnabled:hover {
+    background: #f8f8fa;
+    color: #090c12;
+    border-color: #f8f8fa;
   }
   
   @media only screen and (max-width: 1024px) {
