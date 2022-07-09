@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from 'styles/mintingProgress.module.css';
+import background_1 from "../public/img/background_1.png";
 
 
 
