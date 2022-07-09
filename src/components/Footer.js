@@ -1,9 +1,5 @@
 import React from 'react';
-import Icon from '@mdi/react';
-import { mdiInstagram } from '@mdi/js';
-import { mdiCellphone } from '@mdi/js';
-import { mdiDiscord } from '@mdi/js';
-import { mdiTiktok } from '@mdi/js';
+
 
 import JustaddmetaLogo from 'components/icons/JustaddmetaLogo';
 import Link from 'next/link';
@@ -26,24 +22,8 @@ export default function Footer() {
           </p>
           <button className={styles.button}>Enter Safe House</button>
           <div className={styles.socialWrapper}>
-            <a href="https://www.instagram.com/justaddmeta.agency">
-              <Icon
-                className={styles.icon}
-                path={mdiInstagram}
-                title="Instagram"
-                width="24px"
-                height="24px"
-              />
-            </a>
-            <a href="https://discord.gg/vnp4ccXvRD">
-              <Icon
-                className={styles.icon}
-                path={mdiDiscord}
-                title="Discord"
-                width="24px"
-                height="24px"
-              />
-            </a>
+            <a href="https://www.instagram.com/justaddmeta.agency"></a>
+            <a href="https://discord.gg/vnp4ccXvRD"></a>
           </div>
         </div>
         <div className={styles.colRightContent}>
