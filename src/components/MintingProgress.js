@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Button } from 'grommet';
-
-import styles from 'styles/authcard.module.css';
+import styles from 'styles/mintingProgress.module.css';
 
 export default function MintingProgress({ tokenId, progress }) {
   // until the transactions on metamask complete, we'll display a spinner,
@@ -21,25 +19,34 @@ export default function MintingProgress({ tokenId, progress }) {
         <div className={styles.container}>
           <div className={styles.authorized}>
             <div className={styles.authorized_content}>
-              <h3>follow steps </h3>
+              <h3>Follow steps in your Wallet</h3>
             </div>
             <div className={styles.buttonWrapper}>
               {progress.txStatus === 'IN_PROGRESS' ? (
                 <>
-                  <h1>in progress..</h1>
+                  <div>
+                    <div className="spinner-container">
+                      <div className="loading-spinner">
+                      </div>
+                    </div>
+                    <h1>sign transaction</h1>
+                    <button className={styles.buttonDisabled}>Continue</button>
+                  </div>
                 </>
               ) : null}
 
               {progress.txStatus === 'SUCCESS' ? (
                 <>
+
                   <h1>success</h1>
-                  <button className={styles.buttonConnect}>Continue</button>
+                  <button className={styles.buttonEnabled}>Continue</button>
                 </>
               ) : null}
 
               {progress.txStatus === 'FAIL' ? (
                 <>
                   <h1>fail</h1>
+                  <button className={styles.buttonEnabled}>Back</button>
                 </>
               ) : null}
             </div>
