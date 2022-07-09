@@ -2,7 +2,7 @@ import styles from 'styles/herobanner.module.css';
 
 export default function HeroBanner() {
   return (
-    <section className={styles.heroBanner}>
+    <section src="img/gläserPromo.png" className={styles.heroBanner}>
       <div className={styles.heroWrapper}>
         <div className={styles.heroContent}>
           <label>Lorem Ipsum</label>
