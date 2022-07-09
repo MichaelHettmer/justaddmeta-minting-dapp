@@ -109,7 +109,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                 </p>
                 <div className={styles.buttonWrapper}>
                   <button className={styles.amountTracker}>
-                    {amountMinted}/100
+                    Minted NFTs: {amountMinted}/100
                   </button>
 
                   <button
