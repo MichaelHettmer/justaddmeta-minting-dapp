@@ -12,6 +12,7 @@
   flex-direction: row;
   text-align: center;
   padding: 32px 64px;
+  height: 500px;
   margin: auto;
 }
 
@@ -200,7 +201,8 @@
   }
 
   .container {
-    padding: 120px 32px;
+    padding: 32px 32px;
+    height: auto;
   }
 
   .cardContentWrapper {
@@ -213,7 +215,7 @@
   }
 
   .cardContent {
-    width: 1000%;
+    width: 100%;
     padding: 0px;
     
   }
@@ -256,7 +258,7 @@
 @media only screen and (max-width: 799px) {
 
   .container {
-    padding: 120px 16px;
+    padding: 32px 16px;
   }
 
 
