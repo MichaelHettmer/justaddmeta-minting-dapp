@@ -5,7 +5,6 @@
   width: 100%;
   border-radius: 0px;
   margin-top: none;
-  background-color: #dcdcdc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +16,7 @@
 .heroContent label {
   font-family: 'Roboto';
   font-style: normal;
+  color:#f8f8fa;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -34,7 +34,7 @@
 .heroContent h1 {
   font-family: 'Roboto';
   margin-top: 0;
-  color:cornsilk;
+  color:#f8f8fa;
   font-size: 3.052rem;
   margin: 0.5rem 0 1.38rem;
   font-family: 'Roboto', sans-serif;
@@ -47,7 +47,7 @@
   font-weight: 400;
   line-height: 1.75;
   font-size: 1rem;
-  color:cornsilk;
+  color:#f8f8fa;
 }
 
 /*
