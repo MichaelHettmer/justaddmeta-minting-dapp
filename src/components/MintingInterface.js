@@ -101,7 +101,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                 </div>
               <div className={styles.cardImageWrapper}>
 
-                <img className={styles.cardImage}></img>
+                <div className={styles.cardImage}></div>
               </div>
               <div className={styles.cardContent}>
               <label class={styles.label}>
