@@ -80,11 +80,37 @@
   text-decoration: none;
 }
 
+.iconWrapper {
+
+}
+
 .icon {
-  height: 16px;
-  width: 16px;
+  height: 23px;
   color: #f8f8fa;
 }
+
+.branding span {
+  text-transform: uppercase;
+  color: #FAfafa;
+  font-family: 'Roboto';
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.label { 
+  text-align: left;
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+}
+
+.branding {
+
+}
+
+
+
+
 
 .cardContent h3 {
   margin: 0.5rem 0 1.38rem;
@@ -192,6 +218,7 @@
 
   .cardContentMobile {
     display: flex;
+    flex-direction: column;
   }
 
   .cardContentMobile label {

@@ -95,6 +95,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                       </svg>
                     </div>
                     <div class={styles.branding}>
+                      <span>Justaddmeta</span>
                     </div>
                   </label>
                   <h3>Metaverse has never been this delightful</h3>
@@ -109,6 +110,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                       </svg>
                     </div>
                     <div class={styles.branding}>
+                    <span>Justaddmeta</span>
                     </div>
                   </label>
                 <h3>Metaverse has never been this delightful</h3>
