@@ -86,8 +86,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
         <section className={styles.sectionMintingInterface}>
           <div className={styles.container}>
             <div className={styles.cardContentWrapper}>
-              <div className={styles.cardImageWrapper}>
-                <div className={styles.cardContentMobile}>
+            <div className={styles.cardContentMobile}>
                   <label class={styles.label}>
                     <div class={styles.iconWrapper}>
                       <svg className={styles.icon} viewBox="0 0 24 24">
@@ -100,6 +99,8 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                   </label>
                   <h3>Metaverse has never been this delightful</h3>
                 </div>
+              <div className={styles.cardImageWrapper}>
+
                 <div className={styles.cardImage}></div>
               </div>
               <div className={styles.cardContent}>
