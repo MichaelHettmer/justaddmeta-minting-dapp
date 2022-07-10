@@ -41,12 +41,7 @@
   width: 100%;
 }
 
-.cardImage {
-  background-size: cover;
-  background-image: url('../../public/img/gläserPromo.png');
-}
-
-.imgeDesktop {
+.imageDesktop {
   width: auto;
   height: auto;
   max-width: 100%;
