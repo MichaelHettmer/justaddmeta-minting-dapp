@@ -86,6 +86,9 @@ export default function MintingInterface({ amountMinted, tokenId }) {
           <div className={styles.container}>
             <div className={styles.cardContentWrapper}>
               <div className={styles.cardImageWrapper}>
+              <div className={styles.cardContentMobile}>
+                <h3>Metaverse has never been this delightful</h3>
+                </div>
                 <div className={styles.cardImage}>
                   <img
                     className={styles.image}

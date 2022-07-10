@@ -34,7 +34,11 @@
 
 .cardImageWrapper {
   padding: 16px;
-  width: 50%;
+  /* width: 50%; */
+  display: flex;
+  align-content: stretch;
+  /* flex-grow: 1; */
+  flex-shrink: 0;
 }
 
 
@@ -47,10 +51,17 @@
 
 .cardContent {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 16px;
-  width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    /* width: 50%; */
+    align-content: stretch;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+}
+
+.cardContentMobile {
+  display: none;
 }
 
 .cardContent label,
@@ -172,13 +183,17 @@
     margin: 128px 16px;
   }
 
+  .cardContentMobile {
+    display: flex;
+  }
+  
+
   .cardContent {
-    width: 100%;
+
   }
 
   .cardImageWrapper {
     padding: 16px;
-    width: 100%;
   }
 
   .cardContent {
