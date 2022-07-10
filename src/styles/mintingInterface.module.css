@@ -16,6 +16,7 @@
 }
 
 .cardContentWrapper {
+  max-width: 936px;
   width: 100%;
   gap: 16px;
   padding: 16px;
@@ -48,13 +49,17 @@
   max-height: 100%;
 }
 
+.cardImageWrapper {
+  width: 50%;
+  height: 100%;
+}
 
 .cardContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 16px;
-  /* width: 50%; */
+  width: 50%;
   align-content: stretch;
   /* flex-grow: 1; */
   /* flex-shrink: 1; */
@@ -199,11 +204,24 @@
   }
 
   .cardContentWrapper {
+    max-width: 500px;
     flex-direction: column;
     margin: 128px 16px;
-    padding: 16px;
+    padding: 32px;
     max-width: 500px;
     gap: 16px;
+  }
+
+  .cardContent {
+    width: 1000%;
+    padding: 0px;
+    
+  }
+
+  .cardContentWrapper {
+
+    width: 100%;
+
   }
 
   .cardContentMobile {
