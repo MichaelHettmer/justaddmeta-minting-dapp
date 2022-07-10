@@ -34,11 +34,8 @@
 
 .cardImageWrapper {
   padding: 16px;
-  /* width: 50%; */
-  display: flex;
-  align-content: stretch;
-  /* flex-grow: 1; */
-  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .cardImage {
@@ -221,6 +218,7 @@
   .cardContentMobile {
     display: flex;
     flex-direction: column;
+    padding: 16px;
   }
 
   .cardContentMobile label {
