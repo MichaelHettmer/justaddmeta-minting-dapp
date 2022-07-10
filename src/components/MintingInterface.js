@@ -11,7 +11,7 @@ import {
 import MintingProgress from 'components/MintingProgress';
 // import gläserPromo from "../public/img/gläserPromo.png";
 
-import JustaddmetaLogo from 'components/icons/JustaddmetaLogo';
+
 import styles from 'styles/mintingInterface.module.css';
 
 export default function MintingInterface({ amountMinted, tokenId }) {
@@ -95,7 +95,6 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                       </svg>
                     </div>
                     <div class={styles.branding}>
-                      <JustaddmetaLogo className={styles.brand} />
                     </div>
                   </label>
                   <h3>Metaverse has never been this delightful</h3>
@@ -110,7 +109,6 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                       </svg>
                     </div>
                     <div class={styles.branding}>
-                      <JustaddmetaLogo className={styles.brand} />
                     </div>
                   </label>
                 <h3>Metaverse has never been this delightful</h3>
