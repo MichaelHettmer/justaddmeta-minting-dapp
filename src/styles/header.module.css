@@ -119,7 +119,23 @@
   .headerWrapper {
     padding: 0px 16px;
   }
+
+  .branding {
+    width: 25%;
+  }
 }
+
+@media only screen and (max-width: 380px) {
+
+  .buttonConnected span {
+    display: none;
+  }
+
+  .buttonConnect span {
+    display: none;
+  }
+}
+
 
 /* 
 JUSTADD META CI

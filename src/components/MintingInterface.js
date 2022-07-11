@@ -119,22 +119,21 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                     </div>
                   </label>
                 <h3>Metaverse has never been this delightful</h3>
+                <div className={styles.amountTracker}>
+                    Minted: {amountMinted}/100
+                  </div>
+                  <div className={styles.info}>
+                    <strong>Exclusive edition of XX limited edition summer jams in three
+                    delightful varieties.</strong></div>
                 <p>
                   Remarkable virtual craftsmanship meets ostentatious yet
                   familiar design. Ingredients from a different dimension and
                   extravagant hints of fruits suiting everyone{"'"}s palate.{' '}
                   <br></br>
-                  <br></br>{' '}
-                  <strong>
-                    Exclusive edition of XX limited edition summer jams in three
-                    delightful varieties.
-                  </strong>
-                </p>
+                  <br></br>{' '}</p>
+                
+                
                 <div className={styles.buttonWrapper}>
-                  <button className={styles.amountTracker}>
-                    Minted NFTs: {amountMinted}/100
-                  </button>
-
                   <button
                     className={styles.button}
                     onClick={() => mintNFT(tokenId)}
