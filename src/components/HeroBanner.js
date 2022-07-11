@@ -5,10 +5,10 @@ export default function HeroBanner() {
     <section src="img/gläserPromo.png" className={styles.heroBanner}>
       <div className={styles.heroWrapper}>
         <div className={styles.heroContent}>
-          <label>Lorem Ipdsfsdfsdsum</label>
+          <label>Lorem Ipsum</label>
           <h1>Lorem ipsum amet consectetur adipiscing elit.</h1>
           <p>
-            Opperation Morradsfsdfba was a secretly launched mission with one specific
+            Opperation Morraba was a secretly launched mission with one specific
             goal in mind: finding the safe house four fugitives are using to
             hide from the authorities.
           </p>
