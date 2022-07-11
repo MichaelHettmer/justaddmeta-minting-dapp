@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from 'styles/mintingProgress.module.css';
+// or less ideally
 
 
 
@@ -17,54 +18,52 @@ export default function MintingProgress({ tokenId, progress }) {
   // TODO:// call checkout here with an onClick function for the <continue> button.
   return (
     <>
-      <section className={styles.sectionCard}>
+      <section className={styles.sectionMintingProgress}>
         <div className={styles.container}>
           <div className={styles.authorized}>
-            <div className={styles.authorized_content}>
-              <h3>Follow steps in your Wallet</h3>
+            <div className={styles.authorizedContent}>
+              <h3>Follow steps<br></br> in your Wallet</h3>
             </div>
             <div className={styles.buttonWrapper}>
               {progress.txStatus === 'IN_PROGRESS' ? (
                 <>
 
-                  <div className="spinner-container">
-                    <div className="loading-spinner">
-                    </div>
+                  <div className={styles.buttonWrapper}>
+                    <button className={styles.buttonPending}>
+                      <i className={styles.icon}>        <svg className={styles.icon} viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
+                      </svg></i>
+                      <span>Submit minting</span></button>
+                    <button href="" className={styles.buttonDisabled}>Continue</button>
                   </div>
-                  <h1>sign transaction</h1>
-                  <button className={styles.buttonDisabled}>Continue</button>
-
                 </>
               ) : null}
 
               {progress.txStatus === 'SUCCESS' ? (
                 <>
-                  <div className="icon-container">
-                    <svg className={styles.icon} viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M5,3C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V16.72C21.59,16.37 22,15.74 22,15V9C22,8.26 21.59,7.63 21,7.28V5A2,2 0 0,0 19,3H5M5,5H19V7H13A2,2 0 0,0 11,9V15A2,2 0 0,0 13,17H19V19H5V5M13,9H20V15H13V9M16,10.5A1.5,1.5 0 0,0 14.5,12A1.5,1.5 0 0,0 16,13.5A1.5,1.5 0 0,0 17.5,12A1.5,1.5 0 0,0 16,10.5Z"
-                      />
-                    </svg>
+                  <div className={styles.buttonWrapper}>
+                    <button className={styles.buttonSucess}>
+                      <i className={styles.icon}>        <svg className={styles.icon} viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                      </svg></i>
+                      <span>Minting sucessfull</span></button>
+                    <button href="" className={styles.buttonEnabled}>Continue</button>
                   </div>
-
-                  <h1>success</h1>
-                  <button className={styles.buttonEnabled}>Continue</button>
                 </>
               ) : null}
 
               {progress.txStatus === 'FAIL' ? (
                 <>
-                  <div className="icon-container">
-                    <svg className={styles.icon} viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M5,3C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V16.72C21.59,16.37 22,15.74 22,15V9C22,8.26 21.59,7.63 21,7.28V5A2,2 0 0,0 19,3H5M5,5H19V7H13A2,2 0 0,0 11,9V15A2,2 0 0,0 13,17H19V19H5V5M13,9H20V15H13V9M16,10.5A1.5,1.5 0 0,0 14.5,12A1.5,1.5 0 0,0 16,13.5A1.5,1.5 0 0,0 17.5,12A1.5,1.5 0 0,0 16,10.5Z"
-                      />
-                    </svg>
+                  <div className={styles.iconWrapper}>
+                    <div className={styles.buttonWrapper}>
+                      <button className={styles.buttonFailed}>
+                        <i className={styles.icon}>        <svg className={styles.icon} viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+                        </svg></i>
+                        <span>Minting failed</span></button>
+                      <button href="" className={styles.buttonEnabled}>Back</button>
+                    </div>
                   </div>
-                  <h1>fail</h1>
-                  <button className={styles.buttonEnabled}>Back</button>
                 </>
               ) : null}
             </div>

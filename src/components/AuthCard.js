@@ -71,7 +71,7 @@ export default function AuthCard() {
           <div className={styles.container}>
             <div className={styles.authorized}>
               <div className={styles.authorized_content}>
-                <h3>AUTHORIZED SUCCESSFULLY </h3>
+                <h3>Authorized successfully</h3>
               </div>
 
               <div className={styles.buttonWrapper}>
