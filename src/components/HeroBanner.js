@@ -5,7 +5,7 @@ export default function HeroBanner() {
     <section src="img/gläserPromo.png" className={styles.heroBanner}>
       <div className={styles.heroWrapper}>
         <div className={styles.heroContent}>
-          <label>Lorem Ipsum</label>
+          <label>Lorem Ipswdrwerwerum</label>
           <h1>Lorem ipsum amet consectetur adipiscing elit.</h1>
           <p>
             Opperation Morraba was a secretly launched mission with one specific
