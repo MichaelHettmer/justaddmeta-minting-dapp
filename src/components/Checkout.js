@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import styles from 'styles/checkout.module.css';
 
-export default function Checkout({ txHash, tokenId, imageUrl }) {
+export default function Checkout({ txHash, tokenId, animation_url }) {
   console.log(`Checkout.tokenId: ${tokenId}`);
   console.log(`Checkout.txHash: ${txHash}`);
 
   const openseaLink =
-    'https://testnets.opensea.io/assets/rinkeby/0x089176d84f679497920523951D3E64c835646827/' +
+    'https://testnets.opensea.io/assets/rinkeby/0xAC8C0aA736c247f2171f78B3a22b948656518aFE/' +
     tokenId;
   const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
@@ -40,7 +40,7 @@ export default function Checkout({ txHash, tokenId, imageUrl }) {
             <div className={styles.cardImage}>
               <img
                 className={styles.imagePreview}
-                src={imageUrl}
+                src={animation_url}
               ></img>
               {/* <span>fetch mp4 preview</span> */}
             </div>

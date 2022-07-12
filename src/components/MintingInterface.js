@@ -13,7 +13,7 @@ import MintingProgress from 'components/MintingProgress';
 
 import styles from 'styles/mintingInterface.module.css';
 
-export default function MintingInterface({ amountMinted, tokenId, imageUrl }) {
+export default function MintingInterface({ amountMinted, tokenId, animation_url }) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
@@ -68,7 +68,7 @@ export default function MintingInterface({ amountMinted, tokenId, imageUrl }) {
           tokenId={tokenId}
           txStatus={txStatus}
           txHash={txHash}
-          imageUrl={imageUrl}
+          imageUrl={animation_url}
         />
       ) : (
         <section className={styles.sectionMintingInterface}>

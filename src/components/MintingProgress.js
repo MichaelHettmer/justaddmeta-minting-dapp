@@ -5,7 +5,7 @@ import styles from 'styles/mintingProgress.module.css';
 
 import Checkout from './Checkout';
 
-export default function MintingProgress({ tokenId, txStatus, txHash, imageUrl}) {
+export default function MintingProgress({ tokenId, txStatus, txHash, animation_url}) {
   // until the transactions on metamask complete, we'll display a spinner,
   // depending on the process, display minting success/fail
   // it will display in case of success or fail of a mint.
@@ -99,7 +99,7 @@ console.log(`@MintingProgress, received >>  tokenId: ${tokenId}, txStatus: ${txS
               ) : null}
 
               {mintingComplete ? (
-                <Checkout txHash={txHash} tokenId={tokenId} imageUrl={imageUrl} />
+                <Checkout txHash={txHash} tokenId={tokenId} imageUrl={animation_url} />
               ) : null}
             </div>
           </div>
