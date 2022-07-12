@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import About from 'components/About';
 import HeroBanner from 'components/HeroBanner';
 import Card from 'components/Card';
+import Checkout from 'components/Checkout'
 
 import styles from 'styles/wrapper.module.css';
 
@@ -18,6 +19,7 @@ export default function Wrapper() {
         <>
           <HeroBanner />
           <About />
+          <Checkout />
         </>
       ) : null}
       <Card displayAboveSections={(x) => setDisplayAboveSections(x)} />
