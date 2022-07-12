@@ -42,6 +42,7 @@ export default function Checkout({ txHash, tokenId }) {
                 className={styles.imagePreview}
                 src="X"
               ></img>
+              <span>fetch mp4 preview</span>
             </div>
           </div>
           <div className={styles.cardContent}>
