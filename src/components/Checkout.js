@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import styles from 'styles/checkout.module.css';
 
-export default function Checkout({ txHash, tokenId }) {
+export default function Checkout({ txHash, tokenId, imageUrl }) {
   console.log(`Checkout.tokenId: ${tokenId}`);
   console.log(`Checkout.txHash: ${txHash}`);
 
   const openseaLink =
-    'https://testnets.opensea.io/assets/rinkeby/0xb4b8f15c9ff18b01d6894713c2e7712fbe2871ca/' +
+    'https://testnets.opensea.io/assets/rinkeby/0x089176d84f679497920523951D3E64c835646827/' +
     tokenId;
   const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
@@ -40,9 +40,9 @@ export default function Checkout({ txHash, tokenId }) {
             <div className={styles.cardImage}>
               <img
                 className={styles.imagePreview}
-                src="X"
+                src={imageUrl}
               ></img>
-              <span>fetch mp4 preview</span>
+              {/* <span>fetch mp4 preview</span> */}
             </div>
           </div>
           <div className={styles.cardContent}>
@@ -55,13 +55,11 @@ export default function Checkout({ txHash, tokenId }) {
               href={etherscanLink}
               target="_blank"
               className={styles.button}
-              onClick={() => console.log('clicked CheckTransaction')}
             >
               Check Transaction
             </a>
             <a
               className={styles.button}
-              onClick={() => console.log('clicked BrowseOpensea')}
               href={openseaLink}
               target="_blank"
             >

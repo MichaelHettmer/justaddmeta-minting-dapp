@@ -13,7 +13,7 @@ import MintingProgress from 'components/MintingProgress';
 
 import styles from 'styles/mintingInterface.module.css';
 
-export default function MintingInterface({ amountMinted, tokenId }) {
+export default function MintingInterface({ amountMinted, tokenId, imageUrl }) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
@@ -22,7 +22,9 @@ export default function MintingInterface({ amountMinted, tokenId }) {
   const [txHash, setTxHash] = useState('');
   const [txStatus, setTxStatus] = useState('');
   // const [progressInfo, setProgressInfo] = useState(null);
-  const editionDropAddress = '0xB4B8f15C9FF18B01D6894713c2e7712fBE2871Ca';
+  // const editionDropAddress = '0xB4B8f15C9FF18B01D6894713c2e7712fBE2871Ca';
+  const editionDropAddress = '0x089176d84f679497920523951D3E64c835646827';
+
   const editionDrop = useEditionDrop(editionDropAddress);
 
   async function mintNFT(tokenId) {
@@ -39,6 +41,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
     //   txStatus: 'IN_PROGRESS'
     // });
     try {
+  
       const _txHash = await editionDrop
         .claim(tokenId, 1)
         .then((result) => result.receipt.transactionHash);
@@ -65,6 +68,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
           tokenId={tokenId}
           txStatus={txStatus}
           txHash={txHash}
+          imageUrl={imageUrl}
         />
       ) : (
         <section className={styles.sectionMintingInterface}>
