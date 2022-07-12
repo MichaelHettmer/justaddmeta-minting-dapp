@@ -21,6 +21,7 @@ export default function Wrapper() {
         </>
       ) : null}
       <Card displayAboveSections={(x) => setDisplayAboveSections(x)} />
+    
     </main>
   );
 }

@@ -14,7 +14,7 @@ import styles from 'styles/authcard.module.css';
 export default function AuthCard() {
   const connectWallet = useMetamask();
   const disconnectWallet = useDisconnect();
-  const totalSupply = 110;
+  const totalSupply = 200; // for test purpose.
 
   // Grab the currently connected wallet's address
   const address = useAddress();

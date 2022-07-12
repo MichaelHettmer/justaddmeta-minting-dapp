@@ -1,74 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Box, Image, Button, Text, Heading } from 'grommet';
+import styles from 'styles/mintingProgress.module.css';
 
 export default function Checkout({ txHash, tokenId }) {
-  console.log(`txhash@Checkout >> ${txHash}`);
-  console.log(`tokenId@Checkout >> ${txHash}`);
+  console.log(`Checkout.tokenId: ${tokenId}`);
+  console.log(`Checkout.txHash: ${txHash}`);
 
+  const openseaLink =
+    'https://testnets.opensea.io/assets/rinkeby/0xb4b8f15c9ff18b01d6894713c2e7712fbe2871ca/' +
+    tokenId;
+  const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
+  // TODO:// call checkout here with an onClick function for the <continue> button.
+  console.log(`openseaLink: ${openseaLink}, etherscanLink: ${etherscanLink}`);
   return (
-    <Box direction="row" gap="medium">
-      <Box width={'50%'} justify="center" align="start" pad={'32px'}>
-        <Image
-          src="https://i.imgur.com/mSBSyOz.png"
-          width={'342px'}
-          height={'479px'}
-        />
-      </Box>
-
-      <Box width={'50%'} justify="center">
-        <Heading textAlign="center" fontSize="32px" fontWeight="400">
-          Checkout
-        </Heading>
-        <Text textAlign="center" fontSize="12px" fontWeight="700">
-          You successfully minted “Title”.
-        </Text>
-
-        <Box
-          size="small"
-          margin={'medium'}
-          alignSelf="center"
-          direction="column"
-          gap="small"
-        >
-          <Button
-            alignSelf="center"
-            style={{
-              fontStyle: 'italic',
-              width: '342px',
-              height: '40px'
-            }}
-            primary
-            color="white"
-            size="large"
-            disabled={false}
-            href={'https://rinkeby.etherscan.io/tx/' + txHash}
-            target="_blank"
-          >
-            Check Transaction
-          </Button>
-
-          <Button
-            alignSelf="center"
-            style={{
-              fontStyle: 'italic',
-              width: '342px',
-              height: '40px'
-            }}
-            primary
-            color="white"
-            size="large"
-            disabled={false}
-            href={
-              'https://testnets.opensea.io/assets/rinkeby/0xb4b8f15c9ff18b01d6894713c2e7712fbe2871ca/' +
-              tokenId
-            }
-            target="_blank"
-          >
-            Browse OpenSea
-          </Button>
-        </Box>
-      </Box>
-    </Box>
+    <section className={styles.sectionMintingProgress}>
+      <div className={styles.container}>
+        <div className={styles.authorized}>
+          <div className={styles.authorizedContent}>
+            <h3>Checkout</h3>
+          </div>
+          <div>
+            <a
+              href={etherscanLink}
+              target="_blank"
+              className={styles.buttonSucess}
+              onClick={() => console.log('clicked CheckTransaction')}
+            >
+              Check Transaction
+            </a>
+            <a
+              className={styles.buttonSucess}
+              onClick={() => console.log('clicked BrowseOpensea')}
+              href={openseaLink}
+              target="_blank"
+            >
+              Browse Opensea
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
