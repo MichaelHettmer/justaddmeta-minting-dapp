@@ -68,6 +68,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
         />
       ) : (
         <section className={styles.sectionMintingInterface}>
+          <div className={styles.backgroundImage}>
           <div className={styles.container}>
             <div className={styles.cardContentWrapper}>
               <div className={styles.cardContentMobile}>
@@ -138,6 +139,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </section>
       )}
