@@ -92,7 +92,7 @@ export default function MintingInterface({ amountMinted, tokenId }) {
                 <div className={styles.cardImage}>
                   <img
                     className={styles.imageDesktop}
-                    src="img/nft-preview.png"
+                    src="img/glitch.gif"
                   ></img>
                 </div>
               </div>
