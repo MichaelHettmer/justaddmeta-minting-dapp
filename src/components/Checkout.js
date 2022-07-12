@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from 'styles/mintingProgress.module.css';
+import styles from 'styles/checkout.module.css';
 
 export default function Checkout({ txHash, tokenId }) {
   console.log(`Checkout.tokenId: ${tokenId}`);
