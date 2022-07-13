@@ -17,7 +17,6 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
-
   const [mintingComplete, setMintingComplete] = useState(false);
   const [txHash, setTxHash] = useState('');
   const [txStatus, setTxStatus] = useState('');
@@ -43,7 +42,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
     try {
   
       const _txHash = await editionDrop
-        .claim(tokenId, 1)
+        .claim(2, 1)
         .then((result) => result.receipt.transactionHash);
 
       if (_txHash.length > 0) {
