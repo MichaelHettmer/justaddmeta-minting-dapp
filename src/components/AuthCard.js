@@ -27,7 +27,7 @@ import styles from 'styles/authcard.module.css';
 
 
     const editionDrop = useEditionDrop(
-      '0x78D51EEFF1B444D7F86Bb76C82d59e4F3087A056'
+      '0xab328F328dc9ADBd49959B1bFD5476F8b17B95EF'
     );
 
     // generate a random token id;
