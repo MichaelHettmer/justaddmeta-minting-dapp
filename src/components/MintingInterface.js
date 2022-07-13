@@ -22,7 +22,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
   const [txStatus, setTxStatus] = useState('');
   // const [progressInfo, setProgressInfo] = useState(null);
   // const editionDropAddress = '0xB4B8f15C9FF18B01D6894713c2e7712fBE2871Ca';
-  const editionDropAddress = '0xbA0FF0D6dfB2465B3A65034334509810fa60ddf0';
+  const editionDropAddress = '0x79BC1691E06C56f72B61401F7E331082c1971C63';
 
   const editionDrop = useEditionDrop(editionDropAddress);
 
