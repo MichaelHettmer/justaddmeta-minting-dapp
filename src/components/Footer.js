@@ -33,12 +33,14 @@ export default function Footer() {
             Rothenbaumchaussee 91 <br></br>
             20148 Hamburg, Germany
           </p>
+          <div className={styles.contact}>
           <a href="tel:+4917634990063">
             <span className="buttonInner">+49 (0) 17634990063</span>
           </a>
           <a href="mailto:hello@justaddmeta.com">
             <span className={styles.buttonInner}>hello@justaddmeta.com</span>
           </a>
+          </div>
         </div>
       </div>
     </div>

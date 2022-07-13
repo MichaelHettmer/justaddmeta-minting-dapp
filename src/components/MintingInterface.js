@@ -115,18 +115,24 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     <span>Justaddmeta</span>
                   </div>
                 </label>
-                <h3>Metaverse has never been this delightful</h3>
+                <h3>Metaverse has never been<br></br><br></br> this delightful</h3>
                 <div className={styles.amountTracker}>
                   Minted: {amountMinted}/100
                 </div>
                 <div className={styles.info}>
-                  <strong>
-                  Exclusive and limited edition in three delightful varieties.
-                  </strong>
+                  <div className={styles.content}>
+                    <div className={styles.highlight}>
+                  <p>
+                  Exclusive and limited edition in<br></br> <br></br>  three delightful varieties.
+                  </p>
+                  </div>
                 </div>
+                <div className={styles.description}>
                 <p>
-                The jars seem to be filled with a liquid. A note on the crate says the following: “Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant hints of fruits suiting everyone's palate. 
+                The jars seem to be filled with a liquid. A note on the crate says the following: “Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant. 
                 </p>
+                </div>
+                </div>
 
                 <div className={styles.buttonWrapper}>
                   <button

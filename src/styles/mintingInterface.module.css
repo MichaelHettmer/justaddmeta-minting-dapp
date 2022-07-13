@@ -17,6 +17,10 @@
 
 }
 
+.content p {
+  line-height: 1;
+}
+
 .labelWrapper {
   padding: 4px;
 }
@@ -62,7 +66,9 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 100%;
+  border: 1px solid #f8f8fa;
+  box-shadow: 0 10px 20px rgb(233 233 233 / 4%), 0 6px 6px rgb(226 30 30 / 8%);
+  border-image: linear-gradient(to bottom, transparent, #090c12b1, #f8f8fa94) 1;
 }
 
 .cardImageWrapper {
@@ -75,6 +81,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
+  gap: 8px;
   width: 65%;
   align-content: stretch;
   /* flex-grow: 1; */
@@ -94,7 +101,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  line-height: 1.75;
+
   color: #f8f8fa;
   font-size: 0.8rem;
   text-decoration: none;
@@ -141,16 +148,16 @@
   margin: 0.5rem 0 0rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 0.6;
   letter-spacing: 0rem;
   font-size: 1.563rem;
   text-transform: uppercase;
 }
 
-.cardContent p {
+.hightlight p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.2;
 }
 
 .buttonWrapper {
@@ -158,7 +165,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 8px;
 }
+
+
 
 .amountTracker {
   align-items: center;
@@ -236,6 +246,7 @@
   .cardContent {
     width: 100%;
     padding: 0px;
+    gap: 8px;
     
   }
 
@@ -277,6 +288,11 @@
   .cardContent label {
     display: none;
   }
+
+  .cardContent p {
+    margin-bottom: 16px;
+  }
+
 }
 
 @media only screen and (max-width: 799px) {
