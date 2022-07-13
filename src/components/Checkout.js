@@ -7,7 +7,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
   console.log(`Checkout.txHash: ${txHash}`);
 
   const openseaLink =
-    'https://testnets.opensea.io/assets/rinkeby/0xab328F328dc9ADBd49959B1bFD5476F8b17B95EF/' +
+    'https://testnets.opensea.io/assets/rinkeby/0xbA0FF0D6dfB2465B3A65034334509810fa60ddf0/' +
     tokenId;
   const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
