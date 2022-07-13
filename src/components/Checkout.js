@@ -40,7 +40,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
             <div className={styles.cardImage}>
               <img
                 className={styles.imagePreview}
-                src={metadata.animation_url}
+                src={metadata.image}
               ></img>
               {/* <span>fetch mp4 preview</span> */}
             </div>

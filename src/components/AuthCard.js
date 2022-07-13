@@ -171,7 +171,6 @@ import styles from 'styles/authcard.module.css';
         <MintingInterface
           amountMinted={totalMinted}
           tokenId={tokenToMint}
-          // imageUrl={imageUrl}
           metadata={metadata}
         />
       ) : null}

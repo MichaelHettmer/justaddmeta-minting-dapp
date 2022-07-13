@@ -65,6 +65,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
       txStatus === 'FAIL' ? (
         <MintingProgress
           tokenId={tokenId}
+          amountMinted={amountMinted}
           txStatus={txStatus}
           txHash={txHash}
           metadata={metadata}
