@@ -72,7 +72,7 @@ export default function AuthCard() {
         return currentAmount.toNumber();
       } else {
         console.log(`all minted for tokenId: ${randomTokenId}`);
-        tokensMinted.add(randomTokenId); // if supply is achieved, add this to tokensMinted set.
+        setTokensMinted(tokensMinted.add(randomTokenId)); // if supply is achieved, add this to tokensMinted set.
         return fetchAmountData(getRandomNumber());
       }
     };

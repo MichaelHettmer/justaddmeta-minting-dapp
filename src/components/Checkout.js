@@ -54,7 +54,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 className={styles.button}
                 href={etherscanLink}
                 target="_blank"
-                rel={'no-referrer'}
+                rel="noreferrer"
               >
                 Check Transaction
               </a>
@@ -62,7 +62,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 className={styles.button}
                 href={openseaLink}
                 target="_blank"
-                rel={'no-referrer'}
+                rel="noreferrer"
               >
                 Browse Opensea
               </a>

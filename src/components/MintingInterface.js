@@ -125,7 +125,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                   </strong>
                 </div>
                 <p>
-                The jars seem to be filled with a liquid. A note on the crate says the following: {"\""}Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant hints of fruits suiting everyone's palate.{"\""} 
+                The jars seem to be filled with a liquid. A note on the crate says the following: {"\""}Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant hints of fruits suiting everyone{"'"}s palate.{"\""} 
                 </p>
 
                 <div className={styles.buttonWrapper}>
