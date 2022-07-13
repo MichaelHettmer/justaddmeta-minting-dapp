@@ -46,9 +46,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: minmax(auto, 200px) minmax(auto, 200px);
   justify-content: center;
-  grid-gap: 16px;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-gap: 32px;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
   transition: 0.3s;
 }
 
