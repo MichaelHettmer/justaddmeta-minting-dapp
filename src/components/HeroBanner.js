@@ -5,15 +5,10 @@ export default function HeroBanner() {
     <section className={styles.heroBanner}>
       <div className={styles.heroWrapper}>
         <div className={styles.heroContent}>
-          <label>CHAPTER 1: MISSION MORRABA </label>
-          <h1>Introducing our first holistic web3 project.</h1>
+          <label>OUR FIRST HOLISTIC NFT PROJECT</label>
+          <h1>CHAPTER 1: OPERATION MORRABA</h1>
           <p>
-            Opperation Morraba was a secretly launched mission with one specific
-            goal in mind: finding the safe house four fugitives are using to
-            hide from the authorities. During the hunt your team didn{"'"}t pick
-            up many clues. But you managed to intercept weird coded digital
-            signals and were able to establish informant-relationships in close
-            range of the fugitives.
+          It´s April 2091. Due to your incredible achievments in the line of duty you have been part of an opereation lead by Detective Ivie “Perry” Lofton - a germany based manhunt specialist.
           </p>
         </div>
       </div>

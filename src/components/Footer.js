@@ -48,8 +48,9 @@ export default function Footer() {
           <p>2022 © Justaddsugar - All rights reserved</p>
         </div>
         <div className={styles.colRightLegal}>
-          <Link href="/">Imprint</Link>
-          <Link href="/">Privacy Policy</Link>
+        <Link href="https://justaddmeta.com/terms-conditions/">Terms &amp; Conditions</Link>
+          <Link href="https://justaddmeta.com/imprint/">Imprint</Link>
+          <Link href="https://justaddmeta.com/privacy-policy/">Privacy Policy</Link>
         </div>
       </div>
     </div>
