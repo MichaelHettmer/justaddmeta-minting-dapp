@@ -25,7 +25,7 @@ export default function Card(props) {
                     <div className={styles.cardBody}>
                       <div className={styles.cardLabel}></div>
                       <div className={styles.cardText}>
-                        <h3>Space Jams</h3>
+                        <h3>AMBROSIA</h3>
                         <svg
                           className={styles.icon}
                           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export default function Card(props) {
                   <div className={styles.cardBody}>
                     <div className={styles.cardLabel}></div>
                     <div className={styles.cardText}>
-                      <h3>Homecoming</h3>
+                      <h3>HOMECOMING</h3>
                       <svg
                         className={styles.icon}
                         xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ export default function Card(props) {
                   <div className={styles.cardBody}>
                     <div className={styles.cardLabel}></div>
                     <div className={styles.cardText}>
-                      <h3>What is your secret?</h3>
+                      <h3>WITHIN</h3>
                       <svg
                         className={styles.icon}
                         xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default function Card(props) {
                   <div className={styles.cardBody}>
                     <div className={styles.cardLabel}></div>
                     <div className={styles.cardText}>
-                      <h3>Key Card to hell</h3>
+                      <h3>PURGATORY</h3>
                       <svg
                         className={styles.icon}
                         xmlns="http://www.w3.org/2000/svg"
