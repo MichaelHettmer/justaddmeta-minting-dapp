@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from 'styles/checkout.module.css';
 
-export default function Checkout({ txHash, tokenId, animation_url }) {
+export default function Checkout({ txHash, tokenId, metadata }) {
   console.log(`Checkout.tokenId: ${tokenId}`);
   console.log(`Checkout.txHash: ${txHash}`);
 
@@ -40,15 +40,15 @@ export default function Checkout({ txHash, tokenId, animation_url }) {
             <div className={styles.cardImage}>
               <img
                 className={styles.imagePreview}
-                src={animation_url}
+                src={metadata.animation_url}
               ></img>
               {/* <span>fetch mp4 preview</span> */}
             </div>
           </div>
           <div className={styles.cardContent}>
           <div className={styles.cardDescription}>
-            <h3>You successfully minted "fetch title".</h3>
-            <p>fetch desc</p>
+            <h3>You successfully minted {metadata.name}</h3>
+            <p>{metadata.description}</p>
           </div>
           <div className={styles.buttonWrapper}>
             <a
