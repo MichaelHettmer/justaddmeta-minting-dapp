@@ -31,9 +31,11 @@ export default function Header() {
     <header className={styles.sectionHeader}>
       <nav className={styles.headerWrapper}>
         <div className={styles.branding}>
-          <a href='/'>
+          <Link href={'/'}>
+          
               <JustaddmetaLogo className={styles.brand} />
-          </a>
+          </Link>
+          
         </div>
 
         {/* depending on an existence of a connected wallet address, it shows first or second */}

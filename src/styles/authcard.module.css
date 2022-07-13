@@ -1,6 +1,6 @@
 .sectionCard {
   width: 100vw;
-    height: 100vh;
+    height: 60vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -46,6 +46,7 @@ color-a695d99: #03020200;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   gap: 16px;
 }
 
