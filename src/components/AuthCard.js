@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { useSpring, animated } from '@react-spring/web';
 
 import {
   useAddress,
@@ -10,107 +11,99 @@ import {
 import MintingInterface from 'components/MintingInterface';
 import styles from 'styles/authcard.module.css';
 
+export default function AuthCard() {
+  const connectWallet = useMetamask();
+  const disconnectWallet = useDisconnect();
 
-  export default function AuthCard() {
+  const TOTAL_SUPPLY_TOKEN_0 = 3;
+  const TOTAL_SUPPLY_TOKEN_1 = 50;
+  const TOTAL_SUPPLY_TOKEN_2 = 47;
+  // Grab the currently connected wallet's address
+  const address = useAddress();
+  const [mintingStarted, setMintingStarted] = useState(false);
+  const [tokenToMint, setTokenToMint] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [metadata, setMetadata] = useState(null);
+  const [totalMinted, setTotalMinted] = useState(0);
+  const [tokensMinted, setTokensMinted] = useState(new Set([])); // it'll be used in case current amount is not smaller than total supply
 
-    const connectWallet = useMetamask();
-    const disconnectWallet = useDisconnect();
-    const totalSupply = 200; // for test purpose.
+  const editionDrop = useEditionDrop(
+    '0x79BC1691E06C56f72B61401F7E331082c1971C63'
+  );
 
-    // Grab the currently connected wallet's address
-    const address = useAddress();
-    const [mintingStarted, setMintingStarted] = useState(false);
-    const [tokenToMint, setTokenToMint] = useState(null);
-    const [imageUrl, setImageUrl] = useState(null);
-    const [metadata, setMetadata] = useState(null);
-    const [totalMinted, setTotalMinted] = useState(0);
+  // generate a random token id;
+  // among three tokens, ids as 0, 1 or 2.
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * 3);
+  };
 
+  const getCurrentAmount = async (tokenId) => {
+    try {
+      const x = await editionDrop.get(tokenId);
+      const total = x.supply; //
+      console.log(`tokenId: ${tokenId} total minted ${total}`);
+      return total;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    const editionDrop = useEditionDrop(
-      '0x79BC1691E06C56f72B61401F7E331082c1971C63'
-    );
+  const getMetadata = async (tokenId) => {
+    try {
+      const metadata = await editionDrop.getTokenMetadata(tokenId);
+      // console.log(`metadata : ${JSON.stringify(metadata)}`);
+      return metadata;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    // generate a random token id;
-    // among three tokens, ids as 0, 1 or 2.
-    const getRandomNumber = () => {
-      return Math.floor(Math.random() * 3);
-    };
+  useEffect(() => {
+    // fetch number of minted tokens so far.
+    // if all minted for that id, check another token via calling the function with a new random id
+    // REFACTOR: use memoization (keep track of tried/failed tokens so far, not call it
+    const fetchAmountData = async (randomTokenId) => {
+      const currentAmount = await getCurrentAmount(randomTokenId);
+      const totalSupply = getTokenSupply(randomTokenId);
 
-    const getCurrentAmount = async (tokenId) => {
-      try {
-        const x = await editionDrop.get(tokenId);
-        const total = x.supply; //
-        console.log(`tokenId: ${tokenId} total minted ${total}`);
-        return total;
-      } catch (error) {
-        console.log(error);
+      if (currentAmount < totalSupply) {
+        console.log(`setting token to mint: ${randomTokenId}`);
+        setTokenToMint(randomTokenId);
+        return currentAmount.toNumber();
+      } else {
+        console.log(`all minted for tokenId: ${randomTokenId}`);
+        tokensMinted.add(randomTokenId); // if supply is achieved, add this to tokensMinted set.
+        return fetchAmountData(getRandomNumber());
       }
     };
 
-    const getMetadata = async (tokenId) => {
-      try {
-        const metadata = await editionDrop.getTokenMetadata(tokenId);
-        // const imgUrl = metadata.image;
-        // setImageUrl(imgUrl);
-        console.log(`metadata : ${JSON.stringify(metadata)}`);
-        return metadata;
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    // TODO:// get all metadata and get title, description and animation_url as well.
-    // const getImageUrl = async (tokenId) => {
-    //   try {
-    //     const metadata = await editionDrop.getTokenMetadata(tokenId);
-    //     const imgUrl = metadata.image;
-    //     setImageUrl(imgUrl);
-    //     console.log(`image url : ${imgUrl}`);
-    //     return imgUrl;
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-
-    useEffect(() => {
-      // fetch number of minted tokens so far.
-      // if all minted for that id, check another token via calling the function with a new random id
-      // REFACTOR: use memoization (keep track of tried/failed tokens so far, not call it
-      const fetchAmountData = async (randomTokenId) => {
-        const currentAmount = await getCurrentAmount(randomTokenId);
-        if (currentAmount < totalSupply) {
-          console.log(`setting token to mint: ${randomTokenId}`);
-          setTokenToMint(randomTokenId);
-          return currentAmount.toNumber();
-        } else {
-          /////
-          return fetchData(getRandomNumber());
-        }
-      };
-
-      // call the recursive function fetchAmountData.
-      fetchAmountData(getRandomNumber())
+    // call the recursive function fetchAmountData.
+    const aRandomNumber = getRandomNumber();
+    if (!tokensMinted.has(aRandomNumber)) {
+      fetchAmountData(aRandomNumber)
         .then((total) => setTotalMinted(total))
         .catch(console.error);
-    }, []);
+    }
 
-    useEffect(() => {
-      const fetchMetadata = async (randomTokenId) => {
-        console.log(`getting metadata for token: ${randomTokenId}...`);
-        const metadata = await getMetadata(randomTokenId);
-        console.log(
-          `result of getMetadata in useEffect: ${JSON.stringify(metadata)}`
-        );
-        return metadata;
-      };
+    if(tokensMinted.size == 3) {
+      console.log("all 100 tokens minted. LOL.");
+    }
+  }, []);
 
-      fetchMetadata(tokenToMint)
-        .then((metadata) => setMetadata(metadata))
-        .catch(console.error);
-    }, [tokenToMint]);
+  useEffect(() => {
+    const fetchMetadata = async (randomTokenId) => {
+      console.log(`getting metadata for token: ${randomTokenId}...`);
+      const metadata = await getMetadata(randomTokenId);
+      return metadata;
+    };
 
-    return (
-      <>
+    fetchMetadata(tokenToMint)
+      .then((metadata) => setMetadata(metadata))
+      .catch(console.error);
+  }, [tokenToMint]); // call this when we figureOut tokenToMint with fetchAmountData @ above useEffect.
+
+  return (
+    <>
       {address && !mintingStarted ? (
         <section className={styles.sectionCard}>
           <div className={styles.container}>
@@ -175,6 +168,20 @@ import styles from 'styles/authcard.module.css';
         />
       ) : null}
     </>
-    );
-  }
+  );
 
+  function getTokenSupply(tokenId) {
+    let totalSupply;
+    switch (tokenId) {
+      case 0:
+        totalSupply = TOTAL_SUPPLY_TOKEN_0;
+      case 1:
+        totalSupply = TOTAL_SUPPLY_TOKEN_1;
+      case 2:
+        totalSupply = TOTAL_SUPPLY_TOKEN_2;
+      default:
+        break;
+    }
+    return totalSupply;
+  }
+}

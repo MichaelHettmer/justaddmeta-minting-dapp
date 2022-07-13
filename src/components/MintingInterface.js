@@ -20,10 +20,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
   const [mintingComplete, setMintingComplete] = useState(false);
   const [txHash, setTxHash] = useState('');
   const [txStatus, setTxStatus] = useState('');
-  // const [progressInfo, setProgressInfo] = useState(null);
-  // const editionDropAddress = '0xB4B8f15C9FF18B01D6894713c2e7712fBE2871Ca';
   const editionDropAddress = '0x79BC1691E06C56f72B61401F7E331082c1971C63';
-
   const editionDrop = useEditionDrop(editionDropAddress);
 
   async function mintNFT(tokenId) {

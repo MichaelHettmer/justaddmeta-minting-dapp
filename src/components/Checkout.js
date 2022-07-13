@@ -7,7 +7,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
   console.log(`Checkout.txHash: ${txHash}`);
 
   const openseaLink =
-    'https://testnets.opensea.io/assets/rinkeby/0xbA0FF0D6dfB2465B3A65034334509810fa60ddf0/' +
+    'https://testnets.opensea.io/assets/rinkeby/0x79BC1691E06C56f72B61401F7E331082c1971C63/' +
     tokenId;
   const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
@@ -33,8 +33,8 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 </div>
               </label>
             </div>
-            <h3>You successfully minted "fetch title".</h3>
-            <p>fetch desc</p>
+            <h3>You successfully minted {metadata.name}.</h3>
+            <p>{metadata.description}</p>
           </div>
           <div className={styles.cardImageWrapper}>
             <div className={styles.cardImage}>

@@ -21,19 +21,19 @@ export default function Header() {
   //   connectWallet();
   // }
 
-  // Ensure correct network
-  if (isOnWrongNetwork) {
-    switchNetwork(ChainId.Rinkeby);
-    return;
-  }
+  // // Ensure correct network
+  // if (isOnWrongNetwork) {
+  //   switchNetwork(ChainId.Rinkeby);
+  //   // return;
+  // }
 
   return (
     <header className={styles.sectionHeader}>
       <nav className={styles.headerWrapper}>
         <div className={styles.branding}>
-          <Link href="/">
-            <JustaddmetaLogo className={styles.brand} />
-          </Link>
+          <a href='/'>
+              <JustaddmetaLogo className={styles.brand} />
+          </a>
         </div>
 
         {/* depending on an existence of a connected wallet address, it shows first or second */}

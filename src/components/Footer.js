@@ -16,8 +16,8 @@ export default function Footer() {
             <JustaddmetaLogo />
           </div>
           <p>
-            We enable your brand to <br></br>
-            make a sustainable contribution <br></br>
+            We enable your brand to make<br></br>
+             a sustainable contribution <br></br>
             to the metaverse.
           </p>
           <button className={styles.button}>Enter Safe House</button>
