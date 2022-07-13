@@ -17,7 +17,6 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
-
   const [mintingComplete, setMintingComplete] = useState(false);
   const [txHash, setTxHash] = useState('');
   const [txStatus, setTxStatus] = useState('');
