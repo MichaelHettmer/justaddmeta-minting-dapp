@@ -1,4 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Spring } from 'react-spring';
+
+// <Spring>
+// {props => (
+// <div style={props}>
+// </div>
+// )}
+// </Spring>
 
 import {
   useAddress,
@@ -99,7 +107,16 @@ export default function AuthCard() {
     <>
       {address && !mintingStarted ? (
         <section className={styles.sectionCard}>
-          <div className={styles.container}>
+          
+            <Spring
+              from={{ opacity: 0 }}
+              enter={{ opacity: 1 }}
+              leave={{ opacity: 0 }}
+              delay={200}
+            >
+              {props => (
+                <div style={props}>
+                  <div className={styles.container}>
             <div className={styles.authorized}>
               <div className={styles.authorized_content}>
                 <h3>Authorized successfully</h3>
@@ -121,7 +138,13 @@ export default function AuthCard() {
                 </button>
               </div>
             </div>
-          </div>
+                </div>
+                </div>
+                
+              )}
+            </Spring>
+
+        
         </section>
       ) : (
         <></>
