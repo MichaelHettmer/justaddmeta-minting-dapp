@@ -42,7 +42,6 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 className={styles.imagePreview}
                 src={metadata.image}
               ></img>
-              {/* <span>fetch mp4 preview</span> */}
             </div>
           </div>
           <div className={styles.cardContent}>
@@ -55,7 +54,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 className={styles.button}
                 href={etherscanLink}
                 target="_blank"
-                referrerPolicy={'no-referrer'}
+                rel={'no-referrer'}
               >
                 Check Transaction
               </a>
@@ -63,7 +62,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
                 className={styles.button}
                 href={openseaLink}
                 target="_blank"
-                referrerPolicy={'no-referrer'}
+                rel={'no-referrer'}
               >
                 Browse Opensea
               </a>

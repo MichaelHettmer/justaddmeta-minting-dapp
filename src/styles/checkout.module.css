@@ -64,7 +64,8 @@
     background: none;
     color: #f8f8fa;
     border: solid 1px #f8f8fa;
-    margin: 0;
+    margin-top: 4px;
+
     border-radius: 60px;
     transition: 0.3s;
     padding: 8px 16px 8px 16px;
@@ -131,6 +132,9 @@
 
   .cardDescription p {
     text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
