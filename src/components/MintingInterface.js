@@ -90,7 +90,10 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     </div>
                   </label>
                 </div>
-                <h3>Metaverse has never been this delightful</h3>
+                <h3>Operation Morraba</h3>
+                <div className={styles.subline}>
+                Phase 1
+                </div>
               </div>
               <div className={styles.cardImageWrapper}>
                 <div className={styles.cardImage}>
@@ -120,16 +123,11 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                 </div>
                 <div className={styles.info}>
                   <strong>
-                    Exclusive edition of XX limited edition summer jams in three
-                    delightful varieties.
+                  Exclusive and limited edition in three delightful varieties.
                   </strong>
                 </div>
                 <p>
-                  Remarkable virtual craftsmanship meets ostentatious yet
-                  familiar design. Ingredients from a different dimension and
-                  extravagant hints of fruits suiting everyone{"'"}s palate.{' '}
-                  <br></br>
-                  <br></br>{' '}
+                The jars seem to be filled with a liquid. A note on the crate says the following: “Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant hints of fruits suiting everyone's palate. 
                 </p>
 
                 <div className={styles.buttonWrapper}>

@@ -6,9 +6,7 @@ export default function About() {
     <section className={styles.sectionAbout}>
       <div className={styles.container}>
         <div className={styles.colLeft}>
-          <label>Lorem Ipsum</label>
-          <h1>Lorem ipsum amet consectetur adipiscing elit.</h1>
-        </div>
+        <iframe className={styles.iFrame} src="https://www.youtube.com/embed/GEJplRDkPlE?controls=0" title="SUMMERJAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
         <div className={styles.colRight}>
           <p>
           After uneventful months the mission was called off. But you and a group of friends continued the hunt in secrecy. Last week your team identified different clues believed to be left by the four fugitives. In an abandoned crate you find 50 dirty jars as well as two pieces of paper. Upon inspection, you can{"'"}t understand the writing but identify the other document to be some sort of map.
