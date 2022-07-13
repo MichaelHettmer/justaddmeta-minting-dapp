@@ -33,18 +33,18 @@
     flex-direction: row;
   }
 
-  .cardImageWrapper {
+  .cardVideoWrapper {
     width: 50%;
     height: 100%;
   }
 
-  .cardImage {
+  .cardVideo {
     height: 100%;
     width: 100%;
     display: flex;
   }
 
-  .imagePreview {
+  .animationUrlPreview {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -186,13 +186,13 @@
     gap: 16px;
   }
 
-  .cardImageWrapper {
+  .cardVideoWrapper {
     width: 100%;
     padding: 0px;
     
   }
 
-  .cardImage {
+  .cardVideo {
     width: 100%;
 }
 
