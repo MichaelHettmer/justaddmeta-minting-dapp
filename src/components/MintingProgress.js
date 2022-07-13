@@ -1,3 +1,4 @@
+import { Spinner } from 'grommet';
 import React, { useState } from 'react';
 
 import styles from 'styles/mintingProgress.module.css';
@@ -41,15 +42,8 @@ export default function MintingProgress({
                   {txStatus === 'IN_PROGRESS' ? (
                     <>
                       <button className={styles.buttonPending}>
-                        <i className={styles.icon}>
-                          {' '}
-                          <svg className={styles.icon} viewBox="0 0 24 24">
-                            <path
-                              fill="currentColor"
-                              d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z"
-                            />
-                          </svg>
-                        </i>
+                      
+                          <Spinner className={styles.icon} color={"white"} size="4px" pad={"8px"}/>
                         <span>Submit minting</span>
                       </button>
                       <button className={styles.buttonDisabled}>
