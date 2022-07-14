@@ -128,8 +128,20 @@
 
 @media only screen and (max-width: 380px) {
 
+  .buttonConnect {
+    border-radius: 0px;
+  }
+
+
+  .buttonConnected {
+    border-radius: 0px;
+  }
+
+
+
   .buttonConnected span {
     display: none;
+  
   }
 
   .buttonConnect span {

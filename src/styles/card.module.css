@@ -218,17 +218,15 @@
     grid-column-end: span 4;
   }
 
-  .cardContainer {
+  .itemRow {
 
+    grid-template-rows: auto;
   }
 }
 
 @media only screen and (max-width: 600px) {
 
-  .itemRow {
 
-    grid-template-rows: auto;
-  }
   .cardsPhases {
 
   }
@@ -236,5 +234,11 @@
   .cardContainer {
 
   }
+
+  .headline h2 {
+
+    font-size: 3.052rem;
+ 
+}
 
 }
