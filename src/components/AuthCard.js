@@ -58,6 +58,22 @@ export default function AuthCard() {
     }
   };
 
+
+  function getTokenSupply(tokenId) {
+    let totalSupply;
+    switch (tokenId) {
+      case 0:
+        totalSupply = TOTAL_SUPPLY_TOKEN_0;
+      case 1:
+        totalSupply = TOTAL_SUPPLY_TOKEN_1;
+      case 2:
+        totalSupply = TOTAL_SUPPLY_TOKEN_2;
+      default:
+        break;
+    }
+    return totalSupply;
+  }
+
   useEffect(() => {
     // fetch number of minted tokens so far.
     // if all minted for that id, check another token via calling the function with a new random id
@@ -83,10 +99,11 @@ export default function AuthCard() {
       fetchAmountData(aRandomNumber)
         .then((total) => setTotalMinted(total))
         .catch(console.error);
-    }
+    }else{}
 
     if(tokensMinted.size == 3) {
       console.log("all 100 tokens minted. LOL.");
+
     }
   }, []);
 
@@ -170,18 +187,4 @@ export default function AuthCard() {
     </>
   );
 
-  function getTokenSupply(tokenId) {
-    let totalSupply;
-    switch (tokenId) {
-      case 0:
-        totalSupply = TOTAL_SUPPLY_TOKEN_0;
-      case 1:
-        totalSupply = TOTAL_SUPPLY_TOKEN_1;
-      case 2:
-        totalSupply = TOTAL_SUPPLY_TOKEN_2;
-      default:
-        break;
-    }
-    return totalSupply;
-  }
 }
