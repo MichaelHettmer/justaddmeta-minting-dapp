@@ -37,6 +37,9 @@
 
 .heroContent {
   max-width: 680px;
+
+  padding: 32px;
+
 }
 
 .heroContent h1 {
@@ -98,7 +101,7 @@
 
 @media screen and (max-width: 992px) {
   .heroWrapper {
-    padding: 0px 32px;
+   
   }
 }
 
@@ -109,6 +112,6 @@
   }
 
   .heroWrapper {
-    padding: 0px 16px;
+  
   }
 }

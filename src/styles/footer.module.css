@@ -265,7 +265,7 @@
 
   .containerBranding {
     display: block;
-    padding: 16px 16px;
+    padding: 32px;
     transition: 0.3s;
   }
 
@@ -322,5 +322,18 @@
   .branding {
     margin-top: 32px;
     width: 250px;
+
+  
+
+  }
+
+  .colRightLegal {
+    flex-direction: column;
+  }
+
+  .colLeftRights {
+    font-size: 12px;
+    margin-top: 16px;
+
   }
 }
