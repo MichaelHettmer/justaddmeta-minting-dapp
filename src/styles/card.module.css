@@ -1,10 +1,5 @@
 .cardsPhases {
-  height: 800px;
-  display: flex;
-  padding: 32px 128px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 32px 64px;
 }
 
 
@@ -40,9 +35,7 @@
 
 .cardContainer {
   display: flex;
-  max-width: 1200px;
   flex-direction: column;
-  width: 100%;
 }
 
 .content {
@@ -52,16 +45,16 @@
 
 .headline h2 {
   margin: 0px;
-    font-family: 'Roboto';
-    margin-top: 0;
-    color: #f8f8fa;
-    font-size: 5rem;
-    /* margin: 0.5rem 0 1.38rem; */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: left;
-    text-transform: uppercase;
+  font-family: 'Roboto';
+  margin-top: 0;
+  color: #f8f8fa;
+  font-size: 5rem;
+  /* margin: 0.5rem 0 1.38rem; */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  text-transform: uppercase;
 
 }
 
@@ -74,7 +67,6 @@
   grid-column-gap: 32px;
   grid-row-gap: 32px;
   transition: 0.3s;
-  width: 100%;
 }
 
 .cardCol1 {
@@ -115,11 +107,9 @@
   border-style: solid;
   border-image: linear-gradient(to right, transparent, #090c12b1, #f8f8fa94) 1;
   /* height: 308px; */
-  background: linear-gradient(
-    113.53deg,
-    rgba(255, 255, 255, 0.16) 0.04%,
-    rgba(255, 255, 255, 0) 101.07%
-  );
+  background: linear-gradient(113.53deg,
+      rgba(255, 255, 255, 0.16) 0.04%,
+      rgba(255, 255, 255, 0) 101.07%);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -138,26 +128,12 @@
   box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
   border-style: solid;
   border-image: linear-gradient(to right, transparent, #090c12b1, #f8f8fa94) 1;
-  /* height: 308px; */
- 
   background: linear-gradient(113.53deg, rgb(255 255 255 / 20%) 0.00%, rgb(1 0 0) 90%);
-
-  
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .cardDisabled:hover {
   box-shadow: 0 12px 20px rgb(0 26 237 / 39%), 0 8px 7px rgb(226 30 30 / 30%);
-}
-
-/*
-.card {
-    padding: 16px;
-}*/
-
-.cardImage {
-  width: 100%;
-  height: 100%;
 }
 
 .cardText h3 {
@@ -186,37 +162,6 @@
   margin-top: 32px;
 }
 
-.button {
-  display: inline;
-  background: none;
-  color: #f8f8fa;
-  border: solid 1px #f8f8fa;
-  margin: 0;
-  border-radius: 60px;
-  transition: 0.3s;
-  padding: 8px 16px 8px 16px;
-  width: auto;
-  font-size: 16px;
-  display: -moz-inline-box;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -moz-box-align: center;
-  align-items: center;
-  vertical-align: bottom;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.button:hover {
-  background: #f8f8fa;
-  color: #090c12;
-  border-color: #f8f8fa;
-}
-
 @media only screen and (max-width: 1024px) {
 
   .cardsPhases {
@@ -224,13 +169,12 @@
   }
 
   .sectionCards {
-    margin: 16px;
-    padding: 16px 32px;
+
   }
+
   .cardContainer {
-    display: block;
-    padding: 32px 32px;
   }
+
   .itemRow {
     justify-content: center;
   }
@@ -270,23 +214,17 @@
   }
 
   .cardContainer {
-    display: block;
-    padding: 16px 16px;
+
   }
 }
 
 @media only screen and (max-width: 600px) {
   .cardsPhases {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
   }
 
   .cardContainer {
-    width: 100%;
+
   }
 
-  .button {
-    width: 100%;
-  }
 }

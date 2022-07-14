@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap');
 
 .heroBanner {
-  height: 800px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center; }
+  height: 800px; }
 
 .backgroundImage {
     background-size: cover;
@@ -32,12 +27,10 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
 }
 
 .heroContent {
   max-width: 680px;
-
   padding: 32px;
 
 }
