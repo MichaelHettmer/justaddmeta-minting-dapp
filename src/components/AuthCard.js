@@ -123,6 +123,7 @@ export default function AuthCard() {
     <>
       {address && !mintingStarted ? (
         <section className={styles.sectionCard}>
+          <div className={styles.backgroundImage}>
           <div className={styles.container}>
             <div className={styles.authorized}>
               <div className={styles.authorized_content}>
@@ -146,6 +147,7 @@ export default function AuthCard() {
               </div>
             </div>
           </div>
+          </div>
         </section>
       ) : (
         <></>
@@ -153,6 +155,7 @@ export default function AuthCard() {
 
       {!address && !mintingStarted ? (
         <section className={styles.sectionCard}>
+           <div className={styles.backgroundImage}>
           <div className={styles.container}>
             <div className={styles.authorized}>
               <div className={styles.authorized_content}>
@@ -174,6 +177,7 @@ export default function AuthCard() {
                 </button>
               </div>
             </div>
+          </div>
           </div>
         </section>
       ) : null}

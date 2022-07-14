@@ -1,11 +1,22 @@
 .sectionCard {
   width: 100vw;
-    height: 60vh;
+    height: 800px;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.backgroundImage {
+  background-size: cover;
+    background-image: url('../../public/img/light_2.gif');
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {

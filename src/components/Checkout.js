@@ -15,6 +15,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
   console.log(`openseaLink: ${openseaLink}, etherscanLink: ${etherscanLink}`);
   return (
     <section className={styles.sectionCheckout}>
+      <div className={styles.backgroundImage}>
       <div className={styles.container}>
         <div className={styles.cardWrapper}>
           <div className={styles.cardContentMobile}>
@@ -69,6 +70,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
