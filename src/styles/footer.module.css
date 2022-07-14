@@ -243,6 +243,11 @@
 }
 
 @media only screen and (max-width: 720px) {
+
+  .containerBrandin {
+    padding: 32px 32px;
+  }
+  
   .colRightContent {
     align-items: flex-start;
     text-align: left;

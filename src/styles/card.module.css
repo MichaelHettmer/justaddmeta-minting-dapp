@@ -1,13 +1,12 @@
 .cardsPhases {
-  width: 100vw;
   height: 800px;
-  max-width: 100%;
   display: flex;
+  padding: 32px 128px;
+  align-items: center;
   justify-content: center;
-  align-items: stretch;
-  align-content: center;
   flex-direction: column;
 }
+
 
 .cardText {
   display: flex;
@@ -40,15 +39,15 @@
 }
 
 .cardContainer {
-  display: block;
-  padding: 32px 128px;
-  margin: 64px 0px;
-  transition: 0.3s;
+  display: flex;
+  max-width: 1200px;
+  flex-direction: column;
   width: 100%;
 }
 
 .content {
-  padding: 0px 128px;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
 .headline h2 {
@@ -75,6 +74,7 @@
   grid-column-gap: 32px;
   grid-row-gap: 32px;
   transition: 0.3s;
+  width: 100%;
 }
 
 .cardCol1 {
@@ -218,6 +218,15 @@
 }
 
 @media only screen and (max-width: 1024px) {
+
+  .cardsPhases {
+    padding: 32px 32px;
+  }
+
+  .sectionCards {
+    margin: 16px;
+    padding: 16px 32px;
+  }
   .cardContainer {
     display: block;
     padding: 32px 32px;
@@ -268,7 +277,6 @@
 
 @media only screen and (max-width: 600px) {
   .cardsPhases {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
