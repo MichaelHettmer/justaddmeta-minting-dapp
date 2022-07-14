@@ -7,9 +7,9 @@ export default function Checkout({ txHash, tokenId, metadata }) {
   console.log(`Checkout.txHash: ${txHash}`);
 
   const openseaLink =
-    'https://testnets.opensea.io/assets/rinkeby/0x79BC1691E06C56f72B61401F7E331082c1971C63/' +
+  'https://opensea.io/collection/0xA6d0716F4C2e17E1ECA3ADe33F93E28f96c6974e/' +
     tokenId;
-  const etherscanLink = 'https://rinkeby.etherscan.io/tx/' + txHash;
+    const etherscanLink = 'https://mumbai.polygonscan.com/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
   // TODO:// Fetch Title for Desktop and Mobile.
   console.log(`openseaLink: ${openseaLink}, etherscanLink: ${etherscanLink}`);

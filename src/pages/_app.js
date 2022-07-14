@@ -2,7 +2,7 @@ import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
 
 import Head from 'next/head';
 import '../styles/globals.css';
-const activeChainId = ChainId.Rinkeby;
+const activeChainId = ChainId.Polygon;
 
 function MyApp({ Component, pageProps }) {
   return (
