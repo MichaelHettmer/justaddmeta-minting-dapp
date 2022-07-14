@@ -8,9 +8,9 @@
   justify-content: center;
   align-content: center; }
 
-.heroImage {
+.backgroundImage {
     background-size: cover;
-    background-image: url(/_next/static/media/background_1.0a9cd1e2.png);
+    background-image: url('../../public/img/background_1.png');
     max-height: 100%;
     height: 100%;
     width: 100%;

@@ -30,6 +30,7 @@ export default function MintingProgress({
     <>
       {!mintingComplete && !mintingFailed ? (
         <section className={styles.sectionMintingProgress}>
+         
           <div className={styles.container}>
             <div className={styles.authorized}>
               <div className={styles.authorizedContent}>
