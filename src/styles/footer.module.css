@@ -28,6 +28,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #fafafa;
+  padding: 16px;
 }
 
 .colLeft {
@@ -35,6 +36,7 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
+  gap: 16px;
 }
 
 .branding {
@@ -48,6 +50,13 @@
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
+  gap: 16px;
+
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
 }
 
 .colRightContent h3 {

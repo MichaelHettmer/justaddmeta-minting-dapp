@@ -23,7 +23,7 @@ export default function TransactionFunnel({ total }) {
   const [, switchNetwork] = useNetwork();
 
   const editionDrop = useEditionDrop(
-    '0xB4B8f15C9FF18B01D6894713c2e7712fBE2871Ca'
+    '0x79BC1691E06C56f72B61401F7E331082c1971C63'
   );
   const [isClaiming, setIsClaiming] = useState(false);
   const [justClaimed, setJustClaimed] = useState(false); // so we can show -mint another- instead -mint- text on button.

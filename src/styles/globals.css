@@ -9,6 +9,11 @@
 */
 
 /* Set core body defaults */
+* {
+  margin:0;
+  padding: 0;
+}
+
 body {
   /* min-height: 100vh; */
   text-rendering: optimizeSpeed;
@@ -99,7 +104,7 @@ body {
 .button {
   background: none;
   color: #f8f8fa;
-  border-color: #f8f8fa;
+  border: 1px solid #f8f8fa;
   margin: 0;
   display: -moz-inline-box;
   display: inline-flex;

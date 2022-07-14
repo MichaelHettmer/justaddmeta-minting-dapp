@@ -141,13 +141,13 @@ text-align: center;
   }
 
   .buttonPending {
-    display: inline;
     background: #df8c18c0;
     border:none;
     color: #f8f8Fa;
     margin: 0;
     border-radius: 60px;
-
+    gap: 16px;
+    display: flex;
     transition: 0.3s;
     padding: 8px 16px 8px 16px;
     width: 100%;

@@ -16,8 +16,8 @@ export default function Footer() {
             <JustaddmetaLogo />
           </div>
           <p>
-            We enable your brand to <br></br>
-            make a sustainable contribution <br></br>
+            We enable your brand to make<br></br>
+             a sustainable contribution <br></br>
             to the metaverse.
           </p>
           <button className={styles.button}>Enter Safe House</button>
@@ -33,12 +33,14 @@ export default function Footer() {
             Rothenbaumchaussee 91 <br></br>
             20148 Hamburg, Germany
           </p>
+          <div className={styles.contact}>
           <a href="tel:+4917634990063">
             <span className="buttonInner">+49 (0) 17634990063</span>
           </a>
           <a href="mailto:hello@justaddmeta.com">
             <span className={styles.buttonInner}>hello@justaddmeta.com</span>
           </a>
+          </div>
         </div>
       </div>
     </div>
@@ -48,8 +50,9 @@ export default function Footer() {
           <p>2022 © Justaddsugar - All rights reserved</p>
         </div>
         <div className={styles.colRightLegal}>
-          <Link href="/">Imprint</Link>
-          <Link href="/">Privacy Policy</Link>
+        <Link href="https://justaddmeta.com/terms-conditions/">Terms &amp; Conditions</Link>
+          <Link href="https://justaddmeta.com/imprint/">Imprint</Link>
+          <Link href="https://justaddmeta.com/privacy-policy/">Privacy Policy</Link>
         </div>
       </div>
     </div>

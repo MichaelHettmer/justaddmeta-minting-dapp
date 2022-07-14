@@ -1,31 +1,37 @@
 import styles from 'styles/about.module.css';
 
 export default function About() {
-
   return (
     <section className={styles.sectionAbout}>
       <div className={styles.container}>
         <div className={styles.colLeft}>
-          <label>Lorem Ipsum</label>
-          <h1>Lorem ipsum amet consectetur adipiscing elit.</h1>
+          <iframe
+            className={styles.iFrame}
+            src="https://www.youtube.com/embed/GEJplRDkPlE?controls=0"
+            title="SUMMERJAM"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>{' '}
         </div>
         <div className={styles.colRight}>
           <p>
-            You were part of the mission from day one. During the hunt your team
-            picked up different clues and also weird coded digital signals.
+            After uneventful months the mission was called off. But you and a
+            group of friends continued the hunt in secrecy. Last week your team
+            identified different clues believed to be left by the four
+            fugitives. In an abandoned crate you find 50 dirty jars as well as
+            two pieces of paper. Upon inspection, you can{"'"}t understand the
+            writing but identify the other document to be some sort of map.
             <br></br>
-            <br></br>After months of unsuccessful hunting the mission was called
-            off. But you and a group of friends continued the hunt in secrecy.
-            Last week the fugitives left a couple clues behind while strolling
-            through the streets.<br></br>
             <br></br>
-            In a crate you find 50 jars of jam in three different kinds as well as
-            two pieces of paper. Upon inspection you can’t understand the writing
-            but identify the other document to be some kind of map. You keep an
-            extra careful eye on the jam as you see something swimming inside the
-            jar.
+            The jars seem to be filled with a liquid. A note on the crate says
+            the following: {'"'}Remarkable virtual craftsmanship meets
+            ostentatious yet familiar design. Ingredients from a different
+            dimension and extravagant hints of fruits suiting everyone{"'"}s
+            palate.{'"'}
           </p>
         </div>
       </div>
-    </section> );
+    </section>
+  );
 }

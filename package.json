@@ -12,6 +12,7 @@
   "dependencies": {
     "@mdi/js": "^6.9.96",
     "@mdi/react": "^1.6.0",
+    "@react-spring/web": "^9.5.0",
     "@supabase/supabase-js": "^1.35.3",
     "@thirdweb-dev/react": "^2",
     "@thirdweb-dev/sdk": "^2",
