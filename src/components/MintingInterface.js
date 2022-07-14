@@ -89,7 +89,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     </label>
                   </div>
                   <h3>Operation Morraba</h3>
-                  <div className={styles.subline}>
+                  <div className={styles.sublineMobile}>
                     Phase 1
                   </div>
                 </div>
