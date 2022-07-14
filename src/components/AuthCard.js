@@ -28,7 +28,7 @@ export default function AuthCard() {
   const [tokensMinted, setTokensMinted] = useState(new Set([])); // it'll be used in case current amount is not smaller than total supply
 
   const editionDrop = useEditionDrop(
-    '0xA6d0716F4C2e17E1ECA3ADe33F93E28f96c6974e'
+    '0x5e3b3449fa71D503075892a2a0799251C2316b2F'
   );
 
   // generate a random token id;
@@ -192,3 +192,4 @@ export default function AuthCard() {
   );
 
 }
+

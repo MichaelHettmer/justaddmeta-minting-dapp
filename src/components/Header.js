@@ -21,9 +21,9 @@ export default function Header() {
   //   connectWallet();
   // }
 
-  // // Ensure correct network
+  // Ensure correct network
   // if (isOnWrongNetwork) {
-  //   switchNetwork(ChainId.Rinkeby);
+  //   switchNetwork(ChainId.Polygon);
   //   // return;
   // }
 

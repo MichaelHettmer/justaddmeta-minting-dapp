@@ -125,7 +125,7 @@ export default function TransactionFunnel({ total }) {
 
     // Ensure correct network
     if (isOnWrongNetwork) {
-      switchNetwork(ChainId.Rinkeby);
+      switchNetwork(ChainId.Polygon);
       return;
     }
 

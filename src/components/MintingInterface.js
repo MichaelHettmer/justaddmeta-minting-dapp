@@ -20,14 +20,14 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
   const [mintingComplete, setMintingComplete] = useState(false);
   const [txHash, setTxHash] = useState('');
   const [txStatus, setTxStatus] = useState('');
-  const editionDropAddress = '0xA6d0716F4C2e17E1ECA3ADe33F93E28f96c6974e';
+  const editionDropAddress = '0x5e3b3449fa71D503075892a2a0799251C2316b2F';
   const editionDrop = useEditionDrop(editionDropAddress);
 
   async function mintNFT(tokenId) {
     setTxStatus('IN_PROGRESS');
     // Ensure correct network
     if (isOnWrongNetwork) {
-      switchNetwork(ChainId.Rinkeby);
+      switchNetwork(ChainId.Polygon);
       return;
     }
 
@@ -38,8 +38,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
     // });
     try {
 
-      const _txHash = await editionDrop
-        .claim(tokenId, 1)
+      const _txHash = await editionDrop.claim(tokenId, 1)
         .then((result) => result.receipt.transactionHash);
 
       if (_txHash.length > 0) {
