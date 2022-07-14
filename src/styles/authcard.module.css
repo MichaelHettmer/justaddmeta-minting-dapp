@@ -1,7 +1,8 @@
 .sectionCard {
   position: relative;
   width: 100vw;
-  height: 800px;
+  height: 600px;
+
   max-width: 100%;
   display: flex;
   justify-content: center;
