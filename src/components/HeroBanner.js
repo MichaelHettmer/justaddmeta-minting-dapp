@@ -3,6 +3,7 @@ import styles from 'styles/herobanner.module.css';
 export default function HeroBanner() {
   return (
     <section className={styles.heroBanner}>
+      <div className={styles.container}>
       <div className={styles.backgroundImage}>
         <div className={styles.heroWrapper}>
           <div className={styles.heroContent}>
@@ -14,6 +15,7 @@ export default function HeroBanner() {
               {"\""}Perry{"\""} Lofton - a germany based manhunt specialist.
             </p>
           </div>
+        </div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import About from 'components/About';
 import HeroBanner from 'components/HeroBanner';
 import Card from 'components/Card';
 import Checkout from 'components/Checkout';
-
+import Intro from 'components/Intro';
 import styles from 'styles/wrapper.module.css';
 import AuthCard from './AuthCard';
 import MintingInterface from './MintingInterface';
