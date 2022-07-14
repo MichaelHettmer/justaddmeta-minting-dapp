@@ -15,6 +15,8 @@ export default function About() {
           ></iframe>{' '}
         </div>
         <div className={styles.colRight}>
+        <label>OUR FIRST HOLISTIC NFT PROJECT</label>
+            <h2>CHAPTER 1: OPERATION MORRABA</h2>
           <p>
             After uneventful months the mission was called off. But you and a
             group of friends continued the hunt in secrecy. Last week your team

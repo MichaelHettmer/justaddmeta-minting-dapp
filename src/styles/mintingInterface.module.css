@@ -7,15 +7,23 @@
   justify-content: center;
 }
 
-.backgroundImage {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-image: url('../../public/img/background_2.png');
-    
-
+.hightlight {
+  line-height: 10px;
+    margin-bottom: 16px;
+    font-weight: 800;
 }
+
+.backgroundImage {
+ 
+    background-size: cover;
+      background-image: url('../../public/img/light_2.gif');
+      max-height: 100%;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 
 .subline {
   color: #f8f8fa;

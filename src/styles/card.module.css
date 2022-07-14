@@ -1,7 +1,11 @@
 .cardsPhases {
   width: 100vw;
-  height: 100vh;
+  height: 800px;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
 }
 
 .cardText {
@@ -39,6 +43,7 @@
   padding: 32px 128px;
   margin: 64px 0px;
   transition: 0.3s;
+  width: 100%;
 }
 
 .itemRow {

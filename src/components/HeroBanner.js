@@ -7,7 +7,7 @@ export default function HeroBanner() {
         <div className={styles.heroWrapper}>
           <div className={styles.heroContent}>
             <label>OUR FIRST HOLISTIC NFT PROJECT</label>
-            <h1>CHAPTER 1: OPERATION MORRABA</h1>
+            <h1><div>CHAPTER 1: </div><div>OPERATION MORRABA</div></h1>
             <p>
               It{"'"}s April 2091. Due to your incredible achievments in the line of
               duty you have been part of an opereation lead by Detective Ivie
