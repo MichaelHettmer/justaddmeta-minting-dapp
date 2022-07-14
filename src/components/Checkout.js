@@ -8,7 +8,7 @@ export default function Checkout({ txHash, tokenId, metadata }) {
 
   const editionDropAddress = '0x5e3b3449fa71d503075892a2a0799251c2316b2f';
   const openseaLink =
-    'https://opensea.io/collection/' + editionDropAddress + '/' + tokenId;
+    'https://opensea.io/assets/matic/' + editionDropAddress + '/' + tokenId;
   const etherscanLink = 'https://polygonscan.com/tx/' + txHash;
   // TODO:// call checkout here with an onClick function for the <continue> button.
   // TODO:// Fetch Title for Desktop and Mobile.
