@@ -52,7 +52,7 @@
 }
 
 .iFrame {
-  height: 100%;
+  height: 400px;
   width: 100%;
   border: 1px solid #f8f8fa;
   box-shadow: 0 10px 20px rgb(233 233 233 / 4%), 0 6px 6px rgb(226 30 30 / 8%);
@@ -113,6 +113,7 @@ display: none;
   }
 
   .iFrame {
+    height: 300px;
     min-height: 300px;
   }
   
