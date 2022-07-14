@@ -1,0 +1,149 @@
+.sectionHeader {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
+  z-index: 2;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 76px;
+  padding: 0px 64px;
+  background: #090c12;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+  color: #f8f8fa;
+}
+
+.buttonConnect {
+  display: flex;
+  gap: 8px;
+  background: #dc251f35;
+  color: #f8f8fa;
+  border: none;
+  margin: 0;
+  border-radius: 60px;
+  transition: 0.3s;
+  padding: 8px 16px 8px 16px;
+  font-size: 16px;
+  display: -moz-inline-box;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-box-align: center;
+  align-items: center;
+  vertical-align: bottom;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.buttonConnect:hover {
+  background: #dc251f6d;
+}
+
+.buttonConnected {
+  display: flex;
+  gap: 8px;
+  background: #25db1b35;
+  color: #f8f8fa;
+  border: none;
+  margin: 0;
+  border-radius: 60px;
+  transition: 0.3s;
+  padding: 8px 16px 8px 16px;
+  font-size: 16px;
+  display: -moz-inline-box;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-box-align: center;
+  align-items: center;
+  vertical-align: bottom;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.buttonConnected:hover {
+  background: #25db1b63;
+}
+
+/* Inside auto layout */
+.branding {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.brand {
+  color: #f8f8fa;
+  width: 200px;
+  cursor: pointer;
+}
+
+.navitems {
+  display: flex;
+  width: 50%;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerWrapper {
+    padding: 0px 32px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .headerWrapper {
+    padding: 0px 16px;
+  }
+
+  .branding {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+
+  .buttonConnected span {
+    display: none;
+  }
+
+  .buttonConnect span {
+    display: none;
+  }
+}
+
+
+/* 
+JUSTADD META CI
+color-primary: #090C12;
+color-secondary: #F8F8FA;
+color-text: #000000;
+color-accent: #FFFFFF;
+color-b1b0588: #2B2F39;
+color-a695d99: #03020200;
+*/

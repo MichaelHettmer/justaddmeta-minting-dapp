@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write --plugin-search-dir=. ."
   },
   "dependencies": {
+    "@mdi/js": "^6.9.96",
+    "@mdi/react": "^1.6.0",
+    "@react-spring/web": "^9.5.0",
     "@supabase/supabase-js": "^1.35.3",
     "@thirdweb-dev/react": "^2",
     "@thirdweb-dev/sdk": "^2",
@@ -20,11 +24,14 @@
     "next": "^12.1.6",
     "next-auth": "^4.3.4",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-transition-group": "^4.4.2",
+    "redis": "^4.2.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "eslint": "^8.11.0",
-    "eslint-config-next": "^12.1.0"
+    "eslint-config-next": "^12.1.0",
+    "prettier": "^2.7.1"
   }
 }

@@ -1,0 +1,36 @@
+.phase_btn {
+  text-align: center;
+}
+
+/* This button musst be styled thorugh a global css file */
+.phase_btn button {
+  align-items: center;
+  padding: 8px 24px;
+  width: 200px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 60px;
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 992px) {
+  .phase_btn button {
+    color: #000000;
+    margin-top: 500px;
+    margin-right: 300px;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .phase_btn button {
+    color: #000000;
+    margin-top: 50px;
+    margin-right: 0px;
+  }
+}

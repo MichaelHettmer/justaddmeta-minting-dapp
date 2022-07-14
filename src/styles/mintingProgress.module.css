@@ -1,0 +1,295 @@
+.sectionMintingProgress {
+  width: 100vw;
+  height: 800px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  }
+
+  .backgroundImage {
+    background-size: cover;
+      background-image: url('../../public/img/light_2.gif');
+      max-height: 100%;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .container {
+    max-width: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* 
+  JUSTADD META CI
+  color-primary: #090C12;
+  color-secondary: #F8F8FA;
+  color-text: #000000;
+  color-accent: #FFFFFF;
+  color-b1b0588: #2B2F39;
+  color-a695d99: #03020200;
+  */
+  
+  .authorized {
+    height: auto;
+    width: 100%;
+    padding: 32px 32px;
+    transition: 0.3s;
+    border-width: 1px;
+    box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
+    border-style: solid;
+    -o-border-image: linear-gradient(to right, transparent, #090c12b1, #f8f8fa94)
+      1;
+    border-image: linear-gradient(to right, transparent, #090c12b1, #f8f8fa94) 1;
+    /* height: 308px; */
+    background: linear-gradient(
+      113.53deg,
+      rgba(255, 255, 255, 0.16) 0.04%,
+      rgba(255, 255, 255, 0) 101.07%
+    );
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .authorizedContent {
+text-align: center;
+  }
+
+
+  .authorizedContent h3 {
+    font-size: 1.563rem;
+    color: #f8f8fa;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin: 0px;
+    line-height: 32px;
+  }
+  
+  
+  
+  .contentStatus {
+    margin: 0rem 0 0rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    font-size: 1.25rem;
+    color: #f8f8fa;
+    text-align: center;
+  }
+
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+  .iconContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .icon {
+    height: 18px;
+    width: 16px;
+    color: #f8f8fa;
+    
+  }
+
+    
+  .buttonWrapper {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+
+  .buttonEnabled {
+    display: inline;
+    background: none;
+    color: #f8f8fa;
+    border: 1px solid #f8f8Fa;
+    margin: 0;
+    border-radius: 60px;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    width: 100%;
+    font-size: 16px;
+    display: -moz-inline-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-box-align: center;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .buttonEnabled:hover {
+    background: #f8f8fa;
+    color: #090c12;
+    border-color: #f8f8fa;
+  }
+
+  .buttonPending {
+    background: #df8c18c0;
+    border:none;
+    color: #f8f8Fa;
+    margin: 0;
+    border-radius: 60px;
+    gap: 16px;
+    display: flex;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    width: 100%;
+    font-size: 16px;
+    display: -moz-inline-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-box-align: center;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buttonPending:hover {
+    background: #df8c18;
+
+  }
+
+
+
+  .buttonDisabled {
+    display: inline;
+    background: none;
+    color: #f8f8fa;
+    border: none;
+    border-color: none;
+    margin: 0;
+    border-radius: 60px;
+    opacity: 0.3;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    width: 100%;
+    font-size: 16px;
+    display: -moz-inline-box;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-box-align: center;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .buttonSucess {
+    display: flex;
+     gap: 8px; 
+    background: #25db1b35;
+    color: #f8f8fa;
+    border: none;
+    text-align: center;
+    /* margin: 0; */
+    border-radius: 60px;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    font-size: 16px;
+    /* display: inline-flex; */
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* align-items: center; */
+    /* vertical-align: bottom; */
+    /* text-align: center; */
+    /* overflow: hidden; */
+    /* position: relative; */
+    justify-content: center;
+  }
+
+  .buttonFailed {
+    display: flex;
+    border: solid 1px #dc251f6d;
+    gap: 8px; 
+    background: #dc251f35;
+    color: #f8f8fa;
+    border: none;
+    text-align: center;
+    /* margin: 0; */
+    border-radius: 60px;
+    transition: 0.3s;
+    padding: 8px 16px 8px 16px;
+    font-size: 16px;
+    /* display: inline-flex; */
+    cursor: unset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* align-items: center; */
+    /* vertical-align: bottom; */
+    /* text-align: center; */
+    /* overflow: hidden; */
+    /* position: relative; */
+    justify-content: center;
+  }
+
+  .buttonFailed:hover {
+    background: #dc251f6d;
+  }
+
+
+  
+  @media only screen and (max-width: 1024px) {
+    .container {
+      margin-top: 0%;
+    }
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .container {
+      padding: 0px 16px;
+    }
+  
+    .authorized_content {
+      margin: auto;
+      width: 100%;
+    }
+  
+    .auth_btn1 button,
+    .auth_btn2 button {
+      margin-top: 10px;
+    }
+  }
+  
