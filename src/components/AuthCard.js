@@ -26,10 +26,61 @@ export default function AuthCard() {
   const [metadata, setMetadata] = useState(null);
   const [totalMinted, setTotalMinted] = useState(0);
   const [tokensMinted, setTokensMinted] = useState(new Set([])); // it'll be used in case current amount is not smaller than total supply
+  const [mintableTokens, setMintableTokens] = useState(new Set([0, 1, 2]));
 
   const editionDrop = useEditionDrop(
     '0x5e3b3449fa71D503075892a2a0799251C2316b2F'
   );
+
+  useEffect(() => {
+    if (mintableTokens.size == 0) {
+      console.log(`all of tokenId: ${tokenId} minted. `);
+      return;
+    } else if (mintableTokens.size == 1) { // if there's just one left
+      console.log(`this is the last mintable token: ${tokenId}`);
+      fetchAmountData(tokenId)
+        .then((total) => setTotalMinted(total))
+        .catch(console.error);
+    } else { // if there are 2 or more tokens 
+      const aRandomNumber = getRandomNumber();
+      if (mintableTokens.has(aRandomNumber)) {
+        // if tokenId is still in mintable condition
+        fetchAmountData(aRandomNumber)
+          .then((total) => setTotalMinted(total))
+          .catch(console.error);
+      }
+    }
+
+    const fetchAmountData = async (randomTokenId) => {
+      const currentAmount = await getCurrentAmount(randomTokenId);
+      const totalSupply = getTokenSupply(randomTokenId);
+
+      if (currentAmount < totalSupply) {
+        console.log(`setting token to mint: ${randomTokenId}`);
+        setTokenToMint(randomTokenId);
+        // if this gonna be the last one mintable from that token, then remove the tokenId from mintables.
+        if (currentAmount + 1 == totalSupply) {
+          setMintableTokens(mintableTokens.delete(tokenId));
+        }
+        return currentAmount.toNumber();
+      } else {
+        console.log(`all minted for tokenId: ${randomTokenId}`);
+        return fetchAmountData(getRandomNumber());
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const fetchMetadata = async (randomTokenId) => {
+      console.log(`getting metadata for token: ${randomTokenId}...`);
+      const metadata = await getMetadata(randomTokenId);
+      return metadata;
+    };
+
+    fetchMetadata(tokenToMint)
+      .then((metadata) => setMetadata(metadata))
+      .catch(console.error);
+  }, [tokenToMint]); // call this when we figure out amount left for tokenToMint.
 
   // generate a random token id;
   // among three tokens, ids as 0, 1 or 2.
@@ -58,7 +109,6 @@ export default function AuthCard() {
     }
   };
 
-
   function getTokenSupply(tokenId) {
     let totalSupply;
     switch (tokenId) {
@@ -74,79 +124,37 @@ export default function AuthCard() {
     return totalSupply;
   }
 
-  useEffect(() => {
-    // fetch number of minted tokens so far.
-    // if all minted for that id, check another token via calling the function with a new random id
-    // REFACTOR: use memoization (keep track of tried/failed tokens so far, not call it
-    const fetchAmountData = async (randomTokenId) => {
-      const currentAmount = await getCurrentAmount(randomTokenId);
-      const totalSupply = getTokenSupply(randomTokenId);
-
-      if (currentAmount < totalSupply) {
-        console.log(`setting token to mint: ${randomTokenId}`);
-        setTokenToMint(randomTokenId);
-        return currentAmount.toNumber();
-      } else {
-        console.log(`all minted for tokenId: ${randomTokenId}`);
-        setTokensMinted(tokensMinted.add(randomTokenId)); // if supply is achieved, add this to tokensMinted set.
-        return fetchAmountData(getRandomNumber());
-      }
-    };
-
-    // call the recursive function fetchAmountData.
-    const aRandomNumber = getRandomNumber();
-    if (!tokensMinted.has(aRandomNumber)) {
-      fetchAmountData(aRandomNumber)
-        .then((total) => setTotalMinted(total))
-        .catch(console.error);
-    }else{}
-
-    if(tokensMinted.size == 3) {
-      console.log("all 100 tokens minted. LOL.");
-
-    }
-  }, []);
-
-  useEffect(() => {
-    const fetchMetadata = async (randomTokenId) => {
-      console.log(`getting metadata for token: ${randomTokenId}...`);
-      const metadata = await getMetadata(randomTokenId);
-      return metadata;
-    };
-
-    fetchMetadata(tokenToMint)
-      .then((metadata) => setMetadata(metadata))
-      .catch(console.error);
-  }, [tokenToMint]); // call this when we figureOut tokenToMint with fetchAmountData @ above useEffect.
-
   return (
     <>
       {address && !mintingStarted ? (
         <section className={styles.sectionCard}>
           <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <div className={styles.authorized}>
-              <div className={styles.authorized_content}>
-                <h3>Authorized successfully</h3>
-              </div>
+            <div className={styles.container}>
+              <div className={styles.authorized}>
+                <div className={styles.authorized_content}>
+                  <h3>Authorized successfully</h3>
+                </div>
 
-              <div className={styles.buttonWrapper}>
-                <button
-                  onClick={() => disconnectWallet()}
-                  className={styles.buttonWallet}
-                >
-                  {address.slice(0, 4).concat('...').concat(address.slice(-3))}
-                </button>
+                <div className={styles.buttonWrapper}>
+                  <button
+                    onClick={() => disconnectWallet()}
+                    className={styles.buttonWallet}
+                  >
+                    {address
+                      .slice(0, 4)
+                      .concat('...')
+                      .concat(address.slice(-3))}
+                  </button>
 
-                <button
-                  onClick={() => setMintingStarted(true)}
-                  className={styles.buttonConnect}
-                >
-                  Launch
-                </button>
+                  <button
+                    onClick={() => setMintingStarted(true)}
+                    className={styles.buttonConnect}
+                  >
+                    Launch
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
       ) : (
@@ -155,29 +163,29 @@ export default function AuthCard() {
 
       {!address && !mintingStarted ? (
         <section className={styles.sectionCard}>
-           <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <div className={styles.authorized}>
-              <div className={styles.authorized_content}>
-                <h3>
-                  AUTHORIZED<br></br> ACCESS ONLY{' '}
-                </h3>
-                <p>Connect your wallet to participate.</p>
-              </div>
-              <div className={styles.buttonWrapper}>
-                <button
-                  className={styles.buttonConnect}
-                  onClick={() => connectWallet()}
-                >
-                  Connect Wallet
-                </button>
+          <div className={styles.backgroundImage}>
+            <div className={styles.container}>
+              <div className={styles.authorized}>
+                <div className={styles.authorized_content}>
+                  <h3>
+                    AUTHORIZED<br></br> ACCESS ONLY{' '}
+                  </h3>
+                  <p>Connect your wallet to participate.</p>
+                </div>
+                <div className={styles.buttonWrapper}>
+                  <button
+                    className={styles.buttonConnect}
+                    onClick={() => connectWallet()}
+                  >
+                    Connect Wallet
+                  </button>
 
-                <button disabled className={styles.buttonLaunch}>
-                  Launch
-                </button>
+                  <button disabled className={styles.buttonLaunch}>
+                    Launch
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
       ) : null}
@@ -190,6 +198,4 @@ export default function AuthCard() {
       ) : null}
     </>
   );
-
 }
-

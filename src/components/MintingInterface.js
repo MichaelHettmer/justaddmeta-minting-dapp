@@ -44,7 +44,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
       if (_txHash.length > 0) {
         setTxHash(_txHash);
         setTxStatus('SUCCESS');
-        console.log(`tokenId: ${tokenId}, txStatus: ${txStatus}, txHash: ${txHash}`);
+        console.log(`tokenId: ${tokenId}, txStatus: ${txStatus}, txHash: ${_txHash}`);
         return;
       }
 
