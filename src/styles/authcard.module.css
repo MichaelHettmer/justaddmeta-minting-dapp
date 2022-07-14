@@ -1,11 +1,12 @@
 .sectionCard {
+  position: relative;
   width: 100vw;
-    height: 800px;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  height: 800px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .backgroundImage {

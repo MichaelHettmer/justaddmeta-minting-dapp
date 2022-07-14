@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: stretch;
   align-content: center;
+  flex-direction: column;
 }
 
 .cardText {
@@ -44,6 +45,25 @@
   margin: 64px 0px;
   transition: 0.3s;
   width: 100%;
+}
+
+.content {
+  padding: 0px 128px;
+}
+
+.headline h2 {
+  margin: 0px;
+    font-family: 'Roboto';
+    margin-top: 0;
+    color: #f8f8fa;
+    font-size: 5rem;
+    /* margin: 0.5rem 0 1.38rem; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: uppercase;
+
 }
 
 .itemRow {

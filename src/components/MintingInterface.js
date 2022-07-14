@@ -125,7 +125,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                   <div className={styles.info}>
                     <div className={styles.content}>
                       <div className={styles.highlight}>
-                        Exclusive and limited edition in<br></br> <br></br>  three delightful varieties.
+                        <h4>Exclusive and limited edition in<br></br> <br></br>  three delightful varieties.</h4>
                       </div>
                     
                     <div className={styles.description}>

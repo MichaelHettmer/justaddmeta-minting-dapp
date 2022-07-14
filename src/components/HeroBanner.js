@@ -6,7 +6,7 @@ export default function HeroBanner() {
       <div className={styles.backgroundImage}>
         <div className={styles.heroWrapper}>
           <div className={styles.heroContent}>
-            <label>OUR FIRST HOLISTIC NFT PROJECT</label>
+            <label>A WHOLE OTHER DIMENSION</label>
             <h1><div>CHAPTER 1: </div><div>OPERATION MORRABA</div></h1>
             <p>
               It{"'"}s April 2091. Due to your incredible achievments in the line of

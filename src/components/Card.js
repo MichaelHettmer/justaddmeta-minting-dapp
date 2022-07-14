@@ -17,6 +17,11 @@ export default function Card(props) {
         <AuthCard />
       ) : (
         <section className={styles.cardsPhases}>
+          <div className={styles.content}>
+            <div className={styles.headline}>
+              <h2>PHASES.</h2>
+            </div>
+          </div>
           <div className={styles.cardContainer}>
             <div className={styles.itemRow}>
               <div className={styles.cardCol1}>

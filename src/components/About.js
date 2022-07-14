@@ -15,22 +15,10 @@ export default function About() {
           ></iframe>{' '}
         </div>
         <div className={styles.colRight}>
-        <label>OUR FIRST HOLISTIC NFT PROJECT</label>
-            <h2>CHAPTER 1: OPERATION MORRABA</h2>
+          <label>OUR FIRST HOLISTIC NFT PROJECT</label>
+          <h2>PHASE 1: AMBROSIA</h2>
           <p>
-            After uneventful months the mission was called off. But you and a
-            group of friends continued the hunt in secrecy. Last week your team
-            identified different clues believed to be left by the four
-            fugitives. In an abandoned crate you find 50 dirty jars as well as
-            two pieces of paper. Upon inspection, you can{"'"}t understand the
-            writing but identify the other document to be some sort of map.
-            <br></br>
-            <br></br>
-            The jars seem to be filled with a liquid. A note on the crate says
-            the following: {'"'}Remarkable virtual craftsmanship meets
-            ostentatious yet familiar design. Ingredients from a different
-            dimension and extravagant hints of fruits suiting everyone{"'"}s
-            palate.{'"'}
+            Operation Morraba was a secretly launched mission with one specific goal in mind: finding the safe house four fugitives are using to hide from the authorities. During the hunt, your team didn’t pick up many clues. But you managed to intercept weird coded digital signals and were able to establish informant relationships in the inner circle.
           </p>
         </div>
       </div>
