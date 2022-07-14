@@ -31,6 +31,7 @@ export default function Wrapper() {
         <>
           <HeroBanner />
           <About />
+          <Intro />
         </>
       ) : null}
       <Card displayAboveSections={(x) => setDisplayAboveSections(x)} />
