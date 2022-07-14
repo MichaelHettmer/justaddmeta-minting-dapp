@@ -3,7 +3,6 @@ import styles from 'styles/herobanner.module.css';
 export default function HeroBanner() {
   return (
     <section className={styles.heroBanner}>
-      <div className={styles.container}>
       <div className={styles.backgroundImage}>
         <div className={styles.heroWrapper}>
           <div className={styles.heroContent}>
@@ -17,7 +16,6 @@ export default function HeroBanner() {
           </div>
         </div>
         </div>
-      </div>
     </section>
   );
 }
