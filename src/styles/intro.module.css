@@ -3,12 +3,57 @@
 .heroBanner {
   height: 800px; }
 
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .colLeft {
+
+  }
+
+  .colRight {
+
+  }
+
+
+  .icon {
+    color: #dc251f;
+    
+    border: none;
+    transition: 0.3s;
+    height: 32px;
+    width: 32px;
+  }
+  
+  .icon:hover {
+    color: 
+  }
+
+  .buttonBack {
+      border:none;
+      background-color: #2b2f399e;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+
+  .buttonBack:hover {
+    box-shadow: 0 10px 20px rgb(0 255 28 / 19%), 0 6px 6px rgb(0 255 90 / 8%);
+  }
+
 .backgroundImage {
     background-size: cover;
     background-image: url('../../public/img/light_2.gif');
     max-height: 100%;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } 
 
 .heroContent label {
@@ -31,7 +76,7 @@
 
 .heroContent {
   max-width: 680px;
-  padding: 32px;
+
 
 }
 
@@ -52,7 +97,39 @@
   line-height: 1.75;
   font-size: 1rem;
   color:#f8f8fa;
+  margin-bottom: 16px;
 }
+
+.button {
+    display: inline;
+    background: none;
+    color: #f8f8fa;
+    border: solid 1px #f8f8fa;
+  
+    border-radius: 60px;
+    transition: 0.3s;
+    padding: 8px 64px 8px 64px;
+  
+    font-size: 16px;
+    display: -moz-inline-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-box-align: center;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .button:hover {
+    background: #f8f8fa;
+    color: #090c12;
+    border-color: #f8f8fa;
+  }
 
 /*
 

@@ -15,7 +15,7 @@ export default function HeroBanner() {
             </p>
           </div>
         </div>
-      </div>
+        </div>
     </section>
   );
 }
