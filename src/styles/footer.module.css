@@ -332,8 +332,8 @@
     flex-direction: column;
   }
 
-  .colLeftRights {
-    font-size: 12px;
+  .colLeftRights p {
+    font-size: 10px;
     margin-top: 16px;
 
   }
