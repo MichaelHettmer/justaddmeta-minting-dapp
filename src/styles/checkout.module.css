@@ -8,7 +8,7 @@
   }
 
   .backgroundImage {
-    background-size: cover;
+      background-size: cover;
       background-image: url('../../public/img/light_1.gif');
       max-height: 100%;
       height: 100%;
