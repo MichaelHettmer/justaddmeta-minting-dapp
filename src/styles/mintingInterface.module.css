@@ -8,7 +8,7 @@
 }
 
 .cardContent h4  {
-  line-height: 10px;
+  line-height: 12px;
     margin-bottom: 16px;
     font-weight: 800;
 }
@@ -25,7 +25,12 @@
       align-items: center;
   }
 
-.subline {
+.sublineMobile {
+  
+  display: none;
+}
+
+.sublineDesktop {
   
   color: #f8f8fa;
   text-transform: uppercase;
@@ -35,8 +40,13 @@
 }
 
 .description {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: 1rem;
+  color: #f8f8fa;
+  transition: 0.3s;
   text-transform: none;
-    line-height: 20px;
 }
 
 
@@ -48,7 +58,7 @@
 }
 
 .labelWrapper {
-  padding: 4px;
+  /*padding: 4px;*/
 }
 
 .container {
@@ -63,8 +73,8 @@
 .cardContentWrapper {
   max-width: 936px;
   width: 100%;
-  gap: 16px;
-  padding: 16px;
+  gap: 32px;
+  padding: 32px;
 
   border-width: 1px;
   border-style: solid;
@@ -95,6 +105,14 @@
   border: 1px solid #f8f8fa;
   box-shadow: 0 10px 20px rgb(233 233 233 / 4%), 0 6px 6px rgb(226 30 30 / 8%);
   border-image: linear-gradient(to bottom, transparent, #090c12b1, #f8f8fa94) 1;
+  transition: 0.3s;
+}
+
+.imageDesktop:hover {
+  
+  box-shadow: 0 10px 20px rgb(233 233 233 / 31%), 0 6px 6px rgb(197 197 197 / 6%);
+
+ 
 }
 
 .cardImageWrapper {
@@ -176,8 +194,9 @@
   font-weight: 700;
   line-height: 0.6;
   letter-spacing: 0rem;
-  font-size: 1.563rem;
+  font-size: 2.441rem;
   text-transform: uppercase;
+  transition: 0.3s;
 }
 
 .hightlight  {
@@ -201,19 +220,23 @@
 .amountTracker {
   align-items: center;
   justify-content: center;
-  background: #f8f8fa;
+  background: #f8f8fad7;
   border-radius: 50px;
   color: black;
-  border-color: #f8f8fa;
+  border: none;
   margin: 0;
   /* width: 100%; */
   padding: 8px 16px 8px 16px;
   font-size: 12px;
   font-weight: 800;
   margin: 16px 0px;
-
+  transition: 0.3s;
   box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
 
+}
+
+.amountTracker:hover {
+  background: #f8f8fa;
 }
 
 .button {
@@ -253,9 +276,27 @@
 
 @media only screen and (max-width: 1158px) {
 
-  .subline {
+  .cardContent h4 {
+    line-height: 26px;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+
+
+  .sublineDesktop {
     display: none;
   }
+
+  .sublineMobile {
+  display: inline;
+  color: #f8f8fa;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: left;
+
+}
 
   .sectionMintingInterface {
     height: 100%;
@@ -273,6 +314,7 @@
     padding: 32px;
     max-width: 380px;
     gap: 16px;
+    transition: 0.3s;
   }
 
   .cardContent {

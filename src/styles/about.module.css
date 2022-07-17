@@ -69,7 +69,12 @@
 }
 
 .colRight p {
-  color: #f8f8fa;
+  font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 1rem;
+    color: #f8f8fa;
+    transition: 0.3s;
 }
 
 
@@ -87,17 +92,15 @@ display: none;
 @media only screen and (max-width: 1024px) {
 
   .colLeft label {
-    display: block;
+    display: initial;
     font-family: 'Roboto';
-      font-style: normal;
-      color: #f8f8fa;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 21px;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      margin-top: 32px;
+    font-style: normal;
+    color: #f8f8fa;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
   }
   
   .colLeft h2 {

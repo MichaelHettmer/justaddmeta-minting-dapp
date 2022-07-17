@@ -35,7 +35,9 @@ export default function Footer() {
           </p>
           <div className={styles.contact}>
           <a href="tel:+4917634990063">
-            <span className="buttonInner">+49 (0) 17634990063</span>
+            <span className="buttonInner">
++49 (0) 17634990063
+              </span>
           </a>
           <a href="mailto:hello@justaddmeta.com">
             <span className={styles.buttonInner}>hello@justaddmeta.com</span>

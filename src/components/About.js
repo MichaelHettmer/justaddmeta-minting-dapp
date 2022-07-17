@@ -7,7 +7,7 @@ export default function About() {
         <div className={styles.containerWrapper}>
       <div className={styles.container}>
         <div className={styles.colLeft}>
-        <label>OUR FIRST HOLISTIC NFT PROJECT</label>
+        <label>STARTING TO DIG DEEPER</label>
           <h2>PHASE 1: AMBROSIA</h2>
           <iframe
             className={styles.iFrame}

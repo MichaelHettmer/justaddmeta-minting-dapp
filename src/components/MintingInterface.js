@@ -8,6 +8,8 @@ import {
   ChainId
 } from '@thirdweb-dev/react';
 
+
+// Minted: {amountMinted}/100 removed amount tracker 
 import MintingProgress from 'components/MintingProgress';
 // import gläserPromo from "../public/img/gläserPromo.png";
 
@@ -88,7 +90,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     </label>
                   </div>
                   <h3>Operation Morraba</h3>
-                  <div className={styles.subline}>
+                  <div className={styles.sublineMobile}>
                     Phase 1
                   </div>
                 </div>
@@ -116,16 +118,16 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     </div>
                   </label>
                   <h3>Operation Morraba</h3>
-                  <div className={styles.subline}>
+                  <div className={styles.sublineDesktop}>
                     Phase 1
                   </div>
                   <div className={styles.amountTracker}>
-                    Minted: {amountMinted}/100
+                Minted: 37/100
                   </div>
                   <div className={styles.info}>
                     <div className={styles.content}>
                       <div className={styles.highlight}>
-                        <h4>Exclusive and limited edition in<br></br> <br></br>  three delightful varieties.</h4>
+                        <h4>Exclusive and limited edition inthree delightful varieties.</h4>
                       </div>
                     
                     <div className={styles.description}>
