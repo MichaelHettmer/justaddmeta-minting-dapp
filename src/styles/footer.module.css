@@ -108,14 +108,14 @@
   color: #dc251f;
 }
 
-.icon {
-  color: #f8f8fa;
-  transition: 0.3s;
+.iconWrapper {
+  
+  height: 18px;
+
 }
 
-.icon:hover {
-  color: #dc251f;
-}
+
+
 
 .colLeft p {
   font-family: 'Roboto', sans-serif;
@@ -335,6 +335,7 @@
   .colLeftRights p {
     font-size: 10px;
     margin-top: 16px;
+    text-align: center;
 
   }
 }
