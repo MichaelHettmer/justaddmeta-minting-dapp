@@ -11,7 +11,7 @@ export default function HeroBanner() {
             <p>
               It{"'"}s April 2091. Due to your incredible achievments in the line of
               duty you have been part of an opereation lead by Detective Ivie
-              {"\""}Perry{"\""} Lofton - a germany based manhunt specialist.
+               {"\""}Perry{"\""} Lofton - a germany based manhunt specialist.
             </p>
           </div>
         </div>
