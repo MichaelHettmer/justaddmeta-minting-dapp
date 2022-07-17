@@ -97,6 +97,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     <img
                       className={styles.imageDesktop}
                       src="img/glitch.gif"
+                      loading="lazy"
                     ></img>
                   </div>
                 </div>
