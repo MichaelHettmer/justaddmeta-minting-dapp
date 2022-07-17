@@ -31,7 +31,7 @@ export default function Header() {
     <header className={styles.sectionHeader}>
       <nav className={styles.headerWrapper}>
         <div className={styles.branding}>
-          <Link href={'/'}>
+          <Link href={'https://minting.justaddmeta.com/'}>
           
               <JustaddmetaLogo className={styles.brand} />
           </Link>
