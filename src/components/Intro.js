@@ -1,7 +1,5 @@
 import styles from 'styles/intro.module.css';
-
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 export default function Intro(props) {
   const [enteredPhaseOne, setEnteredPhaseOne] = useState(false);
@@ -16,7 +14,7 @@ export default function Intro(props) {
       <div className={styles.backgroundImage}>
         <div className={styles.container}>
           <div className={styles.colLeft}>
-            <Link href="https://minting.justaddmeta.com">
+            <a href="https://minting.justaddmeta.com">
               <button className={styles.buttonBack}>
                 <svg className={styles.icon} viewBox="0 0 24 24">
                   <path
@@ -25,7 +23,7 @@ export default function Intro(props) {
                   />
                 </svg>
               </button>
-            </Link>
+            </a>
           </div>
           <div className={styles.colRight}>
             <div className={styles.heroWrapper}>

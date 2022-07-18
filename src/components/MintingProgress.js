@@ -1,5 +1,4 @@
 import { Spinner } from 'grommet';
-import Link from 'next/link';
 
 import React, { useState } from 'react';
 
@@ -104,11 +103,11 @@ export default function MintingProgress({
                               <span>Minting failed</span>
                             </button>
 
-                            <Link href="https://minting.justaddmeta.com">
+                            <a href="https://minting.justaddmeta.com">
                               <button className={styles.buttonEnabled}>
                                 Back
                               </button>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </>
