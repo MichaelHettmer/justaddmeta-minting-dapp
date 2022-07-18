@@ -31,11 +31,7 @@ export default function Header() {
     <header className={styles.sectionHeader}>
       <nav className={styles.headerWrapper}>
         <div className={styles.branding}>
-          <Link href={'https://minting.justaddmeta.com/'}>
-          
-              <JustaddmetaLogo className={styles.brand} />
-          </Link>
-          
+          <JustaddmetaLogo className={styles.brand} />
         </div>
 
         {/* depending on an existence of a connected wallet address, it shows first or second */}
