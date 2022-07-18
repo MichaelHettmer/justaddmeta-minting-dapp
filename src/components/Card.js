@@ -11,6 +11,8 @@ export default function Card(props) {
   const enterPhaseOne = (event) => {
     setEnteringPhaseOne(true);
     props.displayAboveSections(false);
+    // quick fix restoring vertical scroll position for phase one page
+    window.scrollTo(0, 0);
   };
 
   return (
