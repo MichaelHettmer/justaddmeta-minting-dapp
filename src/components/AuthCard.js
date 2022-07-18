@@ -24,6 +24,7 @@ export default function AuthCard() {
   const [tokenToMint, setTokenToMint] = useState(null);
   const [metadata, setMetadata] = useState(null);
   const [totalMinted, setTotalMinted] = useState(0);
+  const [totalMintable, setTotalMintable] = useState(100);
   const [mintableTokens, setMintableTokens] = useState(new Set([0, 1, 2]));
   const editionDrop = useEditionDrop(
     '0x5e3b3449fa71D503075892a2a0799251C2316b2F'
@@ -114,13 +115,15 @@ export default function AuthCard() {
       //   mintableTokens.delete(randomTokenId);
       // }
       setTokenToMint(randomTokenId);
+      setTotalMintable(totalSupply);
+      // setTotalMinted(currentAmount)
       setMintableTokens(new Set([]));
       return currentAmount.toNumber();
     } else {
       console.log(
         `all minted for tokenId: ${randomTokenId}, deleting from mintableTokens..`
       );
-      mintableTokens = mintableTokens.delete(randomTokenId);
+      setMintableTokens(mintableTokens.delete(randomTokenId));
       fetchAmountData(getRandomNumber());
     }
   };
@@ -240,6 +243,7 @@ export default function AuthCard() {
       {mintingStarted ? (
         <MintingInterface
           amountMinted={totalMinted}
+          totalMintable={totalMintable}
           tokenId={tokenToMint}
           metadata={metadata}
         />

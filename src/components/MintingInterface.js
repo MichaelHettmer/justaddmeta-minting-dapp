@@ -13,7 +13,7 @@ import MintingProgress from 'components/MintingProgress';
 
 import styles from 'styles/mintingInterface.module.css';
 
-export default function MintingInterface({ amountMinted, tokenId, metadata }) {
+export default function MintingInterface({ amountMinted,totalMintable, tokenId, metadata  }) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
@@ -119,7 +119,7 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                     Phase 1
                   </div>
                   <div className={styles.amountTracker}>
-                    Minted: {amountMinted}/100
+                    Minted: {amountMinted}/{totalMintable}
                   </div>
                   <div className={styles.info}>
                     <div className={styles.content}>
