@@ -15,9 +15,9 @@ export default function AuthCard() {
   const connectWallet = useMetamask();
   const disconnectWallet = useDisconnect();
 
-  const TOTAL_SUPPLY_TOKEN_0 = 4;
-  const TOTAL_SUPPLY_TOKEN_1 = 50;
-  const TOTAL_SUPPLY_TOKEN_2 = 47;
+  const TOTAL_SUPPLY_TOKEN_0 = 5;
+  const TOTAL_SUPPLY_TOKEN_1 = 55;
+  const TOTAL_SUPPLY_TOKEN_2 = 555;
   // Grab the currently connected wallet's address
   const address = useAddress();
   const [mintingStarted, setMintingStarted] = useState(false);
@@ -184,6 +184,17 @@ export default function AuthCard() {
               <div className={styles.authorized}>
                 <div className={styles.authorized_content}>
                   <h3>Authorized successfully</h3>
+                  <div className={styles.iconWrapper}>
+                    <div className={styles.iconInner}>
+                      <svg className={styles.icon} viewBox="0 0 24 24">
+                        <path
+                          className={styles.path}
+                          fill="currentColor"
+                          d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div className={styles.buttonWrapper}>
@@ -251,4 +262,3 @@ export default function AuthCard() {
     </>
   );
 }
-

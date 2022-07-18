@@ -215,23 +215,65 @@
   margin-top: 8px;
 }
 
+.amountTrackerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
 
-
-.amountTracker {
+.amountTrackerGold  {
   align-items: center;
   justify-content: center;
-  background: #f8f8fad7;
+  background: #f8f8fa;
+  box-shadow: 0 5px 16px rgb(239 208 92 / 32%), 0 4px 6px rgb(252 246 189 /  24%);
   border-radius: 50px;
-  color: black;
-  border: none;
+  color: #090c12;
   margin: 0;
-  /* width: 100%; */
   padding: 8px 16px 8px 16px;
   font-size: 12px;
   font-weight: 800;
   margin: 16px 0px;
   transition: 0.3s;
-  box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
+  user-select: none;
+
+
+}
+
+.amountTrackerRed  {
+  align-items: center;
+  justify-content: center;
+  background: #f8f8fa;
+  box-shadow: 0 5px 16px rgb(193 41 43 / 32%), 0 4px 6px rgb(226 130 140 / 24%);
+  border-radius: 50px;
+  color: #090c12;
+  border: none;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 16px 0px;
+  transition: 0.3s;
+  user-select: none;
+
+
+}
+
+.amountTrackerBlue  {
+  align-items: center;
+  justify-content: center;
+  background: #f8f8fa;
+  box-shadow: 0 5px 16px rgb(58 9 215 / 32%), 0 4px 6px rgb(138 143 236 / 24%);
+  border-radius: 50px;
+  color: #090c12;
+  border: none;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 16px 0px;
+  transition: 0.3s;
+  user-select: none;
+
 
 }
 

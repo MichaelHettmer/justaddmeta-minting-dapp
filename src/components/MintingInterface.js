@@ -8,14 +8,18 @@ import {
   ChainId
 } from '@thirdweb-dev/react';
 
-
-// Minted: {amountMinted}/100 removed amount tracker 
+// Minted: {amountMinted}/100 removed amount tracker
 import MintingProgress from 'components/MintingProgress';
 // import gläserPromo from "../public/img/gläserPromo.png";
 
 import styles from 'styles/mintingInterface.module.css';
 
-export default function MintingInterface({ amountMinted,totalMintable, tokenId, metadata  }) {
+export default function MintingInterface({
+  amountMinted,
+  totalMintable,
+  tokenId,
+  metadata
+}) {
   const address = useAddress();
   const isOnWrongNetwork = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
@@ -39,17 +43,18 @@ export default function MintingInterface({ amountMinted,totalMintable, tokenId, 
     //   txStatus: 'IN_PROGRESS'
     // });
     try {
-
-      const _txHash = await editionDrop.claim(tokenId, 1)
+      const _txHash = await editionDrop
+        .claim(tokenId, 1)
         .then((result) => result.receipt.transactionHash);
 
       if (_txHash.length > 0) {
         setTxHash(_txHash);
         setTxStatus('SUCCESS');
-        console.log(`tokenId: ${tokenId}, txStatus: ${txStatus}, txHash: ${_txHash}`);
+        console.log(
+          `tokenId: ${tokenId}, txStatus: ${txStatus}, txHash: ${_txHash}`
+        );
         return;
       }
-
     } catch (error) {
       setTxStatus('FAIL');
       console.log(`error on minting., \n ${error}`);
@@ -59,8 +64,8 @@ export default function MintingInterface({ amountMinted,totalMintable, tokenId, 
   return (
     <>
       {txStatus === 'SUCCESS' ||
-        txStatus === 'IN_PROGRESS' ||
-        txStatus === 'FAIL' ? (
+      txStatus === 'IN_PROGRESS' ||
+      txStatus === 'FAIL' ? (
         <MintingProgress
           tokenId={tokenId}
           amountMinted={amountMinted}
@@ -90,9 +95,7 @@ export default function MintingInterface({ amountMinted,totalMintable, tokenId, 
                     </label>
                   </div>
                   <h3>Operation Morraba</h3>
-                  <div className={styles.sublineMobile}>
-                    Phase 1
-                  </div>
+                  <div className={styles.sublineMobile}>Phase 1</div>
                 </div>
                 <div className={styles.cardImageWrapper}>
                   <div className={styles.cardImage}>
@@ -118,22 +121,35 @@ export default function MintingInterface({ amountMinted,totalMintable, tokenId, 
                     </div>
                   </label>
                   <h3>Operation Morraba</h3>
-                  <div className={styles.sublineDesktop}>
-                    Phase 1
+                  <div className={styles.sublineDesktop}>Phase 1</div>
+                  <div className={styles.amountTrackerWrapper}>
+                    <div className={styles.amountTrackerGold}>Minted: 5</div>
+                    <div className={styles.amountTrackerRed}>Minted: 12</div>
+                    <div className={styles.amountTrackerBlue}>Minted: 18</div>Ï
                   </div>
-                  <div className={styles.amountTracker}>
+
+                  {/* <div className={styles.amountTracker}>
                     Minted: {amountMinted}/{totalMintable}
-                  </div>
+                  </div> */}
                   <div className={styles.info}>
                     <div className={styles.content}>
                       <div className={styles.highlight}>
-                        <h4>Exclusive and limited edition inthree delightful varieties.</h4>
+                        <h4>
+                          Exclusive and limited edition inthree delightful
+                          varieties.
+                        </h4>
                       </div>
-                    
-                    <div className={styles.description}>
-                      The jars seem to be filled with a liquid. A note on the crate says the following: <strong>{"\""}Remarkable virtual craftsmanship meets ostentatious yet familiar design. Ingredients from a different dimension and extravagant{"\""}.</strong>
+
+                      <div className={styles.description}>
+                        The jars seem to be filled with a liquid. A note on the
+                        crate says the following:{' '}
+                        <strong>
+                          {'"'}Remarkable virtual craftsmanship meets
+                          ostentatious yet familiar design. Ingredients from a
+                          different dimension and extravagant{'"'}.
+                        </strong>
+                      </div>
                     </div>
-                  </div>
                   </div>
 
                   <div className={styles.buttonWrapper}>
