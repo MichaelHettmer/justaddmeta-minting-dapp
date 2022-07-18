@@ -121,8 +121,16 @@ export default function MintingInterface({ amountMinted, tokenId, metadata }) {
                   <div className={styles.sublineDesktop}>
                     Phase 1
                   </div>
-                  <div className={styles.amountTracker}>
-                Minted: 37/100
+                  <div className={styles.amountTrackerWrapper}>
+                  <div className={styles.amountTrackerGold}>
+                Minted: 5
+                  </div>
+                  <div className={styles.amountTrackerRed}>
+                  Minted: 12
+                  </div>
+                  <div className={styles.amountTrackerBlue}>
+                  Minted: 18
+                  </div>
                   </div>
                   <div className={styles.info}>
                     <div className={styles.content}>
