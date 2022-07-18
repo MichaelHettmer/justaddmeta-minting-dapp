@@ -99,9 +99,9 @@ export default function AuthCard() {
       fetchAmountData(aRandomNumber)
         .then((total) => setTotalMinted(total))
         .catch(console.error);
-    }else{}
+    } else { }
 
-    if(tokensMinted.size == 3) {
+    if (tokensMinted.size == 3) {
       console.log("all 100 tokens minted. LOL.");
 
     }
@@ -124,29 +124,38 @@ export default function AuthCard() {
       {address && !mintingStarted ? (
         <section className={styles.sectionCard}>
           <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <div className={styles.authorized}>
-              <div className={styles.authorized_content}>
-                <h3>Authorized successfully</h3>
-              </div>
+            <div className={styles.container}>
+              <div className={styles.authorized}>
+                <div className={styles.authorized_content}>
+                  <h3>Authorized successfully</h3>
+                  <div className={styles.iconWrapper}>
+                    <div className={styles.iconInner}>
+                    
 
-              <div className={styles.buttonWrapper}>
-                <button
-                  onClick={() => disconnectWallet()}
-                  className={styles.buttonWallet}
-                >
-                  {address.slice(0, 4).concat('...').concat(address.slice(-3))}
-                </button>
+                      <svg className={styles.icon} viewBox="0 0 24 24">
+                        <path className={styles.path} fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
 
-                <button
-                  onClick={() => setMintingStarted(true)}
-                  className={styles.buttonConnect}
-                >
-                  Launch
-                </button>
+                <div className={styles.buttonWrapper}>
+                  <button
+                    onClick={() => disconnectWallet()}
+                    className={styles.buttonWallet}
+                  >
+                    {address.slice(0, 4).concat('...').concat(address.slice(-3))}
+                  </button>
+
+                  <button
+                    onClick={() => setMintingStarted(true)}
+                    className={styles.buttonConnect}
+                  >
+                    Launch
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
       ) : (
@@ -155,29 +164,29 @@ export default function AuthCard() {
 
       {!address && !mintingStarted ? (
         <section className={styles.sectionCard}>
-           <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <div className={styles.authorized}>
-              <div className={styles.authorized_content}>
-                <h3>
-                  AUTHORIZED<br></br> ACCESS ONLY{' '}
-                </h3>
-                <p>Connect your wallet to participate.</p>
-              </div>
-              <div className={styles.buttonWrapper}>
-                <button
-                  className={styles.buttonConnect}
-                  onClick={() => connectWallet()}
-                >
-                  Connect Wallet
-                </button>
+          <div className={styles.backgroundImage}>
+            <div className={styles.container}>
+              <div className={styles.authorized}>
+                <div className={styles.authorized_content}>
+                  <h3>
+                    AUTHORIZED<br></br> ACCESS ONLY{' '}
+                  </h3>
+                  <p>Connect your wallet to participate.</p>
+                </div>
+                <div className={styles.buttonWrapper}>
+                  <button
+                    className={styles.buttonConnect}
+                    onClick={() => connectWallet()}
+                  >
+                    Connect Wallet
+                  </button>
 
-                <button disabled className={styles.buttonLaunch}>
-                  Launch
-                </button>
+                  <button disabled className={styles.buttonLaunch}>
+                    Launch
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
       ) : null}
