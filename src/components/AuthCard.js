@@ -15,34 +15,44 @@ export default function AuthCard() {
   const connectWallet = useMetamask();
   const disconnectWallet = useDisconnect();
 
-  const TOTAL_SUPPLY_TOKEN_0 = 3;
+  const TOTAL_SUPPLY_TOKEN_0 = 4;
   const TOTAL_SUPPLY_TOKEN_1 = 50;
   const TOTAL_SUPPLY_TOKEN_2 = 47;
   // Grab the currently connected wallet's address
   const address = useAddress();
   const [mintingStarted, setMintingStarted] = useState(false);
   const [tokenToMint, setTokenToMint] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
   const [metadata, setMetadata] = useState(null);
   const [totalMinted, setTotalMinted] = useState(0);
-  const [tokensMinted, setTokensMinted] = useState(new Set([])); // it'll be used in case current amount is not smaller than total supply
   const [mintableTokens, setMintableTokens] = useState(new Set([0, 1, 2]));
-
   const editionDrop = useEditionDrop(
     '0x5e3b3449fa71D503075892a2a0799251C2316b2F'
   );
 
+  // let tokenToMint = null;
+  // let totalMinted;
+  // let metadata = null;
+
+  // const setTotalMinted = (amount) => {
+  //   totalMinted = amount;
+  // };
+
+  // const setTokenToMint = (tokenId) => {
+  //   tokenToMint = tokenId;
+  // };
+
+  // const setMetadata = (_metadata) => {
+  //   metadata = _metadata;
+  // };
+
+  // let mintableTokens = new Set([0, 1, 2]);
+  // tokenId: 0 total minted 4
+  // AuthCard.js?1dc9:41 setting token to mint: 0
+
   useEffect(() => {
-    if (mintableTokens.size == 0) {
-      console.log(`all of tokenId: ${tokenId} minted. `);
-      return;
-    } else if (mintableTokens.size == 1) { // if there's just one left
-      console.log(`this is the last mintable token: ${tokenId}`);
-      fetchAmountData(tokenId)
-        .then((total) => setTotalMinted(total))
-        .catch(console.error);
-    } else { // if there are 2 or more tokens 
+    if (mintableTokens.size > 0) {
       const aRandomNumber = getRandomNumber();
+      console.log(`generated a random number > ${aRandomNumber}`);
       if (mintableTokens.has(aRandomNumber)) {
         // if tokenId is still in mintable condition
         fetchAmountData(aRandomNumber)
@@ -50,40 +60,73 @@ export default function AuthCard() {
           .catch(console.error);
       }
     }
-
-    const fetchAmountData = async (randomTokenId) => {
-      const currentAmount = await getCurrentAmount(randomTokenId);
-      const totalSupply = getTokenSupply(randomTokenId);
-
-      if (currentAmount < totalSupply) {
-        console.log(`setting token to mint: ${randomTokenId}`);
-        setTokenToMint(randomTokenId);
-        // if this gonna be the last one mintable from that token, then remove the tokenId from mintables.
-        if (currentAmount + 1 == totalSupply) {
-          setMintableTokens(mintableTokens.delete(tokenId));
-        }
-        return currentAmount.toNumber();
-      } else {
-        console.log(`all minted for tokenId: ${randomTokenId}`);
-        return fetchAmountData(getRandomNumber());
-      }
-    };
+    if (tokenToMint != null) {
+      console.log();
+      fetchMetadata(tokenToMint)
+        .then((metadata) => setMetadata(metadata))
+        .catch(console.error);
+    }
   }, []);
-
   useEffect(() => {
-    const fetchMetadata = async (randomTokenId) => {
-      console.log(`getting metadata for token: ${randomTokenId}...`);
-      const metadata = await getMetadata(randomTokenId);
-      return metadata;
-    };
+    if (tokenToMint != null) {
+      fetchMetadata(tokenToMint)
+        .then((metadata) => setMetadata(metadata))
+        .catch(console.error);
+    }
+  }, [tokenToMint]);
 
-    fetchMetadata(tokenToMint)
-      .then((metadata) => setMetadata(metadata))
-      .catch(console.error);
-  }, [tokenToMint]); // call this when we figure out amount left for tokenToMint.
+  // useEffect(() => {
 
-  // generate a random token id;
-  // among three tokens, ids as 0, 1 or 2.
+  //     const fetchMetadata = async (randomTokenId) => {
+  //       console.log(`getting metadata for token: ${randomTokenId}...`);
+  //       const metadata = await getMetadata(randomTokenId);
+  //       return metadata;
+  //     };
+
+  //     fetchMetadata(tokenToMint)
+  //       .then((metadata) => setMetadata(metadata))
+  //       .catch(console.error);
+
+  // }, [tokenToMint]); // call this when we figure out amount left for tokenToMint.
+
+  const fetchMetadata = async (randomTokenId) => {
+    console.log(`getting metadata for token: ${randomTokenId}...`);
+    const metadata = await getMetadata(randomTokenId);
+    console.log(
+      ` metadata for token: ${randomTokenId}... : ${JSON.stringify(metadata)}`
+    );
+
+    return metadata;
+  };
+
+  const fetchAmountData = async (randomTokenId) => {
+    const currentAmount = await getCurrentAmount(randomTokenId);
+    const totalSupply = getTokenSupply(randomTokenId);
+    console.log(`for randomTokenId:`);
+    console.log(`currentAmount: ${currentAmount}, totalSupply: ${totalSupply}`);
+
+    if (currentAmount < totalSupply) {
+      console.log(`minting ${randomTokenId}`);
+      // setTokenToMint(randomTokenId);
+      // if this gonna be the last one mintable from that token, then remove the tokenId from mintables.
+      // if (currentAmount + 1 == totalSupply) {
+      //   // setMintableTokens(mintableTokens.delete(tokenId));
+      //   mintableTokens.delete(randomTokenId);
+      // }
+      setTokenToMint(randomTokenId);
+      setMintableTokens(new Set([]));
+      return currentAmount.toNumber();
+    } else {
+      console.log(
+        `all minted for tokenId: ${randomTokenId}, deleting from mintableTokens..`
+      );
+      mintableTokens = mintableTokens.delete(randomTokenId);
+      fetchAmountData(getRandomNumber());
+    }
+  };
+
+  // generate a random token id
+  // among three tokens: 0, 1 or 2.
   const getRandomNumber = () => {
     return Math.floor(Math.random() * 3);
   };
@@ -110,14 +153,19 @@ export default function AuthCard() {
   };
 
   function getTokenSupply(tokenId) {
-    let totalSupply;
+    let totalSupply = 0;
     switch (tokenId) {
       case 0:
         totalSupply = TOTAL_SUPPLY_TOKEN_0;
+        break;
       case 1:
         totalSupply = TOTAL_SUPPLY_TOKEN_1;
+        break;
+
       case 2:
         totalSupply = TOTAL_SUPPLY_TOKEN_2;
+        break;
+
       default:
         break;
     }
