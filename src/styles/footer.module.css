@@ -28,7 +28,8 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #fafafa;
-  padding: 16px;
+  padding: 16px 0px;
+
 }
 
 .colLeft {
@@ -107,14 +108,14 @@
   color: #dc251f;
 }
 
-.icon {
-  color: #f8f8fa;
-  transition: 0.3s;
+.iconWrapper {
+  
+  height: 18px;
+
 }
 
-.icon:hover {
-  color: #dc251f;
-}
+
+
 
 .colLeft p {
   font-family: 'Roboto', sans-serif;
@@ -190,7 +191,7 @@
   letter-spacing: 0.1rem;
   line-height: 1.75;
   color: #f8f8fa;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-decoration: none;
 }
 
@@ -225,7 +226,7 @@
   letter-spacing: 0.1rem;
   line-height: 1.75;
   color: #f8f8fa;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -265,7 +266,7 @@
 
   .containerBranding {
     display: block;
-    padding: 16px 16px;
+    padding: 32px;
     transition: 0.3s;
   }
 
@@ -288,7 +289,7 @@
   .wrapperRights {
     flex-direction: column;
     flex-direction: column-reverse;
-    padding: 8px;
+    padding: 16px;
   }
 
   .colLeftRights p {
@@ -298,7 +299,7 @@
     letter-spacing: 0.1rem;
     line-height: 1.75;
     color: #f8f8fa;
-    font-size: 1rem;
+    font-size: 12px;
     text-align: right;
     letter-spacing: 0.1rem;
   }
@@ -322,5 +323,19 @@
   .branding {
     margin-top: 32px;
     width: 250px;
+
+  
+
+  }
+
+  .colRightLegal {
+    flex-direction: column;
+  }
+
+  .colLeftRights p {
+    font-size: 10px;
+    margin-top: 16px;
+    text-align: center;
+
   }
 }

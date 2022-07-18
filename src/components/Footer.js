@@ -35,7 +35,9 @@ export default function Footer() {
           </p>
           <div className={styles.contact}>
           <a href="tel:+4917634990063">
-            <span className="buttonInner">+49 (0) 17634990063</span>
+            <span className="buttonInner">
++49 (0) 17634990063
+              </span>
           </a>
           <a href="mailto:hello@justaddmeta.com">
             <span className={styles.buttonInner}>hello@justaddmeta.com</span>
@@ -50,9 +52,9 @@ export default function Footer() {
           <p>2022 © Justaddsugar - All rights reserved</p>
         </div>
         <div className={styles.colRightLegal}>
-        <Link href="https://justaddmeta.com/terms-conditions/" target="_blank">Terms &amp; Conditions</Link>
-          <Link href="https://justaddmeta.com/imprint/"target="_blank">Imprint</Link>
-          <Link href="https://justaddmeta.com/privacy-policy/"target="_blank">Privacy Policy</Link>
+        <Link href="https://justaddmeta.com/terms-conditions/" target="_blank" rel="noreferrer noopener">Terms &amp; Conditions</Link>
+          <Link href="https://justaddmeta.com/imprint/" target="_blank" rel="noreferrer noopener">Imprint</Link>
+          <Link href="https://justaddmeta.com/privacy-policy/"target="_blank" rel="noreferrer noopener">Privacy Policy</Link>
         </div>
       </div>
     </div>

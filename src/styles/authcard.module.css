@@ -1,12 +1,14 @@
 .sectionCard {
+
   width: 100vw;
-  height: 600px;
+  height: 85vh;
 
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+
 }
 
 .backgroundImage {
@@ -18,6 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .container {
@@ -56,10 +59,22 @@ color-a695d99: #03020200;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  height: 260px;
+  gap: 16px;
+}
+
+.authorized_content {
+
+  display: flex;
+  flex-direction: column;
   
   gap: 16px;
+
+  align-items: center;
+
+
 }
 
 
@@ -72,6 +87,57 @@ color-a695d99: #03020200;
   color: #f8f8fa;
   text-align: center;
   text-transform: uppercase;
+
+}
+
+
+.iconWrapper {
+  background-color: #2B2F39;
+  width: 64px;
+  height: 64px;
+  border-radius: 60px;
+  border: 1px solid rgb(226 30 30 / 16%);
+  box-shadow: 0 10px 20px hsl(0deg 0% 91% / 4%), 0 6px 6px rgb(226 30 30 / 8%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.pulse {
+  margin:100px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cca92c;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
+
+.iconWrapper:hover {
+  animation: none;
+}
+
+
+
+.iconInner {
+
+  height: 29px;
+  width: 27px;
+
+}
+.icon {
+    color: #f8f8fa;
+    height: 29px;
+    width: 27px;
+    box-shadow: 0 10px 20px rgb(0 31 237 / 19%), 0 6px 6px rgb(226 30 30 / 8%);
+
 }
 
 .authorized_content p {
@@ -82,6 +148,9 @@ color-a695d99: #03020200;
   color: #f8f8fa;
   text-align: center;
 }
+
+
+
 
 .buttonWrapper {
   gap: 16px;
@@ -123,7 +192,7 @@ color-a695d99: #03020200;
   display: inline;
   background: none;
   color: #f8f8fa;
-  border-color: #f8f8fa;
+  border: 1px solid #f8f8fa;
   margin: 0;
   border-radius: 60px;
   transition: 0.3s;
@@ -155,6 +224,7 @@ color-a695d99: #03020200;
   background: none;
   color: #f8f8fa;
   border: none;
+  border-color: none;
   margin: 0;
   border-radius: 60px;
   opacity: 0.3;
@@ -197,3 +267,5 @@ color-a695d99: #03020200;
     margin-top: 10px;
   }
 }
+
+

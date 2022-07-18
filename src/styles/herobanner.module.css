@@ -1,19 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap');
-
 .heroBanner {
-  height: 800px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center; }
+  height: 800px; }
 
 .backgroundImage {
-    background-size: cover;
-    background-image: url('../../public/img/light_2.gif');
-    max-height: 100%;
-    height: 100%;
-    width: 100%;
+  background-size: cover;
+  background-image: url('../../public/img/light_2.gif');
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 } 
 
 .heroContent label {
@@ -32,11 +28,13 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
 }
 
 .heroContent {
   max-width: 680px;
+  padding: 32px;
+  transition: 0.3s;
+
 }
 
 .heroContent h1 {
@@ -48,6 +46,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 1.3;
+  transition: 0.3s;
 }
 
 .heroContent p {
@@ -56,6 +55,7 @@
   line-height: 1.75;
   font-size: 1rem;
   color:#f8f8fa;
+  transition: 0.3s;
 }
 
 /*
@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 992px) {
   .heroWrapper {
-    padding: 0px 32px;
+   
   }
 }
 
@@ -109,6 +109,6 @@
   }
 
   .heroWrapper {
-    padding: 0px 16px;
+  
   }
 }
