@@ -1,4 +1,6 @@
 import { Spinner } from 'grommet';
+import Link from 'next/link';
+
 import React, { useState } from 'react';
 
 import styles from 'styles/mintingProgress.module.css';
@@ -30,84 +32,91 @@ export default function MintingProgress({
     <>
       {!mintingComplete && !mintingFailed ? (
         <section className={styles.sectionMintingProgress}>
-         <div className={styles.backgroundImage}>
-          <div className={styles.container}>
-            <div className={styles.authorized}>
-              <div className={styles.authorizedContent}>
-                <h3>
-                  Follow steps<br></br> in your Wallet
-                </h3>
-              </div>
-              <div className={styles.buttonWrapper}>
-                <>
-                  {txStatus === 'IN_PROGRESS' ? (
-                    <>
-                      <button className={styles.buttonPending}>
-                      
-                          <Spinner className={styles.icon} color={"white"} size="4px" pad={"8px"}/>
-                        <span>Submit minting</span>
-                      </button>
-                      <button className={styles.buttonDisabled}>
-                        Continue
-                      </button>
-                    </>
-                  ) : null}
-
-                  {txStatus === 'SUCCESS' ? (
-                    <>
-                      <div className={styles.buttonWrapper}>
-                        <button className={styles.buttonSucess}>
-                          <i className={styles.icon}>
-                            {' '}
-                            <svg className={styles.icon} viewBox="0 0 24 24">
-                              <path
-                                fill="currentColor"
-                                d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
-                              />
-                            </svg>
-                          </i>
-                          <span>Minting sucessful</span>
+          <div className={styles.backgroundImage}>
+            <div className={styles.container}>
+              <div className={styles.authorized}>
+                <div className={styles.authorizedContent}>
+                  <h3>
+                    Follow steps<br></br> in your Wallet
+                  </h3>
+                </div>
+                <div className={styles.buttonWrapper}>
+                  <>
+                    {txStatus === 'IN_PROGRESS' ? (
+                      <>
+                        <button className={styles.buttonPending}>
+                          <Spinner
+                            className={styles.icon}
+                            color={'white'}
+                            size="4px"
+                            pad={'8px'}
+                          />
+                          <span>Submit minting</span>
                         </button>
-                        <button
-                          className={styles.buttonEnabled}
-                          onClick={() => setMintingComplete(true)}
-                        >
+                        <button className={styles.buttonDisabled}>
                           Continue
                         </button>
-                      </div>
-                    </>
-                  ) : null}
+                      </>
+                    ) : null}
 
-                  {txStatus === 'FAIL' ? (
-                    <>
-                      <div className={styles.iconWrapper}>
+                    {txStatus === 'SUCCESS' ? (
+                      <>
                         <div className={styles.buttonWrapper}>
-                          <button className={styles.buttonFailed}>
+                          <button className={styles.buttonSucess}>
                             <i className={styles.icon}>
                               {' '}
                               <svg className={styles.icon} viewBox="0 0 24 24">
                                 <path
                                   fill="currentColor"
-                                  d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z"
+                                  d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
                                 />
                               </svg>
                             </i>
-                            <span>Minting failed</span>
+                            <span>Minting sucessful</span>
                           </button>
                           <button
                             className={styles.buttonEnabled}
-                            onClick={() => setMintingFailed(true)}
+                            onClick={() => setMintingComplete(true)}
                           >
-                            Back
+                            Continue
                           </button>
                         </div>
-                      </div>
-                    </>
-                  ) : null}
-                </>
+                      </>
+                    ) : null}
+
+                    {txStatus === 'FAIL' ? (
+                      <>
+                        <div className={styles.iconWrapper}>
+                          <div className={styles.buttonWrapper}>
+                            <button className={styles.buttonFailed}>
+                              <i className={styles.icon}>
+                                {' '}
+                                <svg
+                                  className={styles.icon}
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    fill="currentColor"
+                                    d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z"
+                                  />
+                                </svg>
+                              </i>
+                              <span>Minting failed</span>
+                            </button>
+
+                            <Link href="https://minting.justaddmeta.com">
+                              <button className={styles.buttonEnabled}>
+                                Back
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
+                      </>
+                    ) : null}
+                  </>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
       ) : null}

@@ -15,24 +15,121 @@ export default function AuthCard() {
   const connectWallet = useMetamask();
   const disconnectWallet = useDisconnect();
 
-  const TOTAL_SUPPLY_TOKEN_0 = 3;
-  const TOTAL_SUPPLY_TOKEN_1 = 50;
-  const TOTAL_SUPPLY_TOKEN_2 = 47;
+  const TOTAL_SUPPLY_TOKEN_0 = 5;
+  const TOTAL_SUPPLY_TOKEN_1 = 55;
+  const TOTAL_SUPPLY_TOKEN_2 = 555;
   // Grab the currently connected wallet's address
   const address = useAddress();
   const [mintingStarted, setMintingStarted] = useState(false);
   const [tokenToMint, setTokenToMint] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
   const [metadata, setMetadata] = useState(null);
   const [totalMinted, setTotalMinted] = useState(0);
-  const [tokensMinted, setTokensMinted] = useState(new Set([])); // it'll be used in case current amount is not smaller than total supply
-
+  const [totalMintable, setTotalMintable] = useState(100);
+  const [mintableTokens, setMintableTokens] = useState(new Set([0, 1, 2]));
   const editionDrop = useEditionDrop(
     '0x5e3b3449fa71D503075892a2a0799251C2316b2F'
   );
 
-  // generate a random token id;
-  // among three tokens, ids as 0, 1 or 2.
+  // let tokenToMint = null;
+  // let totalMinted;
+  // let metadata = null;
+
+  // const setTotalMinted = (amount) => {
+  //   totalMinted = amount;
+  // };
+
+  // const setTokenToMint = (tokenId) => {
+  //   tokenToMint = tokenId;
+  // };
+
+  // const setMetadata = (_metadata) => {
+  //   metadata = _metadata;
+  // };
+
+  // let mintableTokens = new Set([0, 1, 2]);
+  // tokenId: 0 total minted 4
+  // AuthCard.js?1dc9:41 setting token to mint: 0
+
+  useEffect(() => {
+    if (mintableTokens.size > 0) {
+      const aRandomNumber = getRandomNumber();
+      console.log(`generated a random number > ${aRandomNumber}`);
+      if (mintableTokens.has(aRandomNumber)) {
+        // if tokenId is still in mintable condition
+        fetchAmountData(aRandomNumber)
+          .then((total) => setTotalMinted(total))
+          .catch(console.error);
+      }
+    }
+    if (tokenToMint != null) {
+      console.log();
+      fetchMetadata(tokenToMint)
+        .then((metadata) => setMetadata(metadata))
+        .catch(console.error);
+    }
+  }, []);
+  useEffect(() => {
+    if (tokenToMint != null) {
+      fetchMetadata(tokenToMint)
+        .then((metadata) => setMetadata(metadata))
+        .catch(console.error);
+    }
+  }, [tokenToMint]);
+
+  // useEffect(() => {
+
+  //     const fetchMetadata = async (randomTokenId) => {
+  //       console.log(`getting metadata for token: ${randomTokenId}...`);
+  //       const metadata = await getMetadata(randomTokenId);
+  //       return metadata;
+  //     };
+
+  //     fetchMetadata(tokenToMint)
+  //       .then((metadata) => setMetadata(metadata))
+  //       .catch(console.error);
+
+  // }, [tokenToMint]); // call this when we figure out amount left for tokenToMint.
+
+  const fetchMetadata = async (randomTokenId) => {
+    console.log(`getting metadata for token: ${randomTokenId}...`);
+    const metadata = await getMetadata(randomTokenId);
+    console.log(
+      ` metadata for token: ${randomTokenId}... : ${JSON.stringify(metadata)}`
+    );
+
+    return metadata;
+  };
+
+  const fetchAmountData = async (randomTokenId) => {
+    const currentAmount = await getCurrentAmount(randomTokenId);
+    const totalSupply = getTokenSupply(randomTokenId);
+    console.log(`for randomTokenId:`);
+    console.log(`currentAmount: ${currentAmount}, totalSupply: ${totalSupply}`);
+
+    if (currentAmount < totalSupply) {
+      console.log(`minting ${randomTokenId}`);
+      // setTokenToMint(randomTokenId);
+      // if this gonna be the last one mintable from that token, then remove the tokenId from mintables.
+      // if (currentAmount + 1 == totalSupply) {
+      //   // setMintableTokens(mintableTokens.delete(tokenId));
+      //   mintableTokens.delete(randomTokenId);
+      // }
+      setTokenToMint(randomTokenId);
+      setTotalMintable(totalSupply);
+      // setTotalMinted(currentAmount)
+      setMintableTokens(new Set([]));
+      return currentAmount.toNumber();
+    } else {
+      console.log(
+        `all minted for tokenId: ${randomTokenId}, deleting from mintableTokens..`
+      );
+      setMintableTokens(mintableTokens.delete(randomTokenId));
+      fetchAmountData(getRandomNumber());
+    }
+  };
+
+  // generate a random token id
+  // among three tokens: 0, 1 or 2.
   const getRandomNumber = () => {
     return Math.floor(Math.random() * 3);
   };
@@ -58,66 +155,25 @@ export default function AuthCard() {
     }
   };
 
-
   function getTokenSupply(tokenId) {
-    let totalSupply;
+    let totalSupply = 0;
     switch (tokenId) {
       case 0:
         totalSupply = TOTAL_SUPPLY_TOKEN_0;
+        break;
       case 1:
         totalSupply = TOTAL_SUPPLY_TOKEN_1;
+        break;
+
       case 2:
         totalSupply = TOTAL_SUPPLY_TOKEN_2;
+        break;
+
       default:
         break;
     }
     return totalSupply;
   }
-
-  useEffect(() => {
-    // fetch number of minted tokens so far.
-    // if all minted for that id, check another token via calling the function with a new random id
-    // REFACTOR: use memoization (keep track of tried/failed tokens so far, not call it
-    const fetchAmountData = async (randomTokenId) => {
-      const currentAmount = await getCurrentAmount(randomTokenId);
-      const totalSupply = getTokenSupply(randomTokenId);
-
-      if (currentAmount < totalSupply) {
-        console.log(`setting token to mint: ${randomTokenId}`);
-        setTokenToMint(randomTokenId);
-        return currentAmount.toNumber();
-      } else {
-        console.log(`all minted for tokenId: ${randomTokenId}`);
-        setTokensMinted(tokensMinted.add(randomTokenId)); // if supply is achieved, add this to tokensMinted set.
-        return fetchAmountData(getRandomNumber());
-      }
-    };
-
-    // call the recursive function fetchAmountData.
-    const aRandomNumber = getRandomNumber();
-    if (!tokensMinted.has(aRandomNumber)) {
-      fetchAmountData(aRandomNumber)
-        .then((total) => setTotalMinted(total))
-        .catch(console.error);
-    } else { }
-
-    if (tokensMinted.size == 3) {
-      console.log("all 100 tokens minted. LOL.");
-
-    }
-  }, []);
-
-  useEffect(() => {
-    const fetchMetadata = async (randomTokenId) => {
-      console.log(`getting metadata for token: ${randomTokenId}...`);
-      const metadata = await getMetadata(randomTokenId);
-      return metadata;
-    };
-
-    fetchMetadata(tokenToMint)
-      .then((metadata) => setMetadata(metadata))
-      .catch(console.error);
-  }, [tokenToMint]); // call this when we figureOut tokenToMint with fetchAmountData @ above useEffect.
 
   return (
     <>
@@ -130,10 +186,12 @@ export default function AuthCard() {
                   <h3>Authorized successfully</h3>
                   <div className={styles.iconWrapper}>
                     <div className={styles.iconInner}>
-                    
-
                       <svg className={styles.icon} viewBox="0 0 24 24">
-                        <path className={styles.path} fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                        <path
+                          className={styles.path}
+                          fill="currentColor"
+                          d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
+                        />
                       </svg>
                     </div>
                   </div>
@@ -144,7 +202,10 @@ export default function AuthCard() {
                     onClick={() => disconnectWallet()}
                     className={styles.buttonWallet}
                   >
-                    {address.slice(0, 4).concat('...').concat(address.slice(-3))}
+                    {address
+                      .slice(0, 4)
+                      .concat('...')
+                      .concat(address.slice(-3))}
                   </button>
 
                   <button
@@ -193,12 +254,11 @@ export default function AuthCard() {
       {mintingStarted ? (
         <MintingInterface
           amountMinted={totalMinted}
+          totalMintable={totalMintable}
           tokenId={tokenToMint}
           metadata={metadata}
         />
       ) : null}
     </>
   );
-
 }
-
