@@ -3,9 +3,11 @@ import { React, useState } from 'react';
 import AuthCard from 'components/AuthCard';
 
 import styles from 'styles/card.module.css';
+import Intro from './Intro';
 
 export default function Card(props) {
   const [enteringPhaseOne, setEnteringPhaseOne] = useState(false);
+  const [enteredPhaseOne, setEnteredPhaseOne] = useState(false);
   const enterPhaseOne = (event) => {
     setEnteringPhaseOne(true);
     props.displayAboveSections(false);
@@ -14,16 +16,23 @@ export default function Card(props) {
   return (
     <>
       {enteringPhaseOne ? ( // if entering phase one, we'd render an Auth challenge (wallet connection)
-        <AuthCard />
+        <>
+          {enteredPhaseOne ? (
+            <AuthCard />
+          ) : ( 
+            <Intro enteredPhaseOne={(x) => setEnteredPhaseOne(x)} />
+          )}
+        </>
       ) : (
+        // <AuthCard />
         <section className={styles.cardsPhases}>
           <div className={styles.cardContainer}>
-          <div className={styles.content}>
-            <div className={styles.headline}>
-              <h2>PHASES.</h2>
+            <div className={styles.content}>
+              <div className={styles.headline}>
+                <h2>PHASES.</h2>
+              </div>
             </div>
-          </div>
-          
+
             <div className={styles.itemRow}>
               <div className={styles.cardCol1}>
                 <a onClick={() => enterPhaseOne()}>
